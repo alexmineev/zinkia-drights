@@ -1,0 +1,1084 @@
+******* GlassCube Tasks Exporter v0.alpha ********
+
+****> Connecting & login into https://salitamontiel.glasscubes.com
+>>>> Reading section list...>>>> Trying to login with user: alexey.mineev@zinkia.com
+>>>> Login done with user alexey.mineev@zinkia.com
+>>>>> Found project SONO | ID: 18036
+>>>>> Done. Section list fetched. Found 5
+>>>> Parsing section SONO>>>> Fetching task list for section id: 18036>>>> Trying to login with user: alexey.mineev@zinkia.com
+>>>> Login done with user alexey.mineev@zinkia.com
+>>>> Preparing report... 
+>>>>> Downloading CSV report. ./page?5-2.ILinkListener-export>>>> Fetching page list... 
+>>>> Exporting page /wicket/./page?5-2.ILinkListener-table-topToolbars-toolbars-1-span-navigator-navigation-1-pageLink
+>>>> Trying to login with user: alexey.mineev@zinkia.com
+>>>> Login done with user alexey.mineev@zinkia.com
+>>>> Done. 30 tasks parsed
+>>>> Exporting page /wicket/./page?5-2.ILinkListener-table-topToolbars-toolbars-1-span-navigator-navigation-2-pageLink
+>>>> Trying to login with user: alexey.mineev@zinkia.com
+>>>> Login done with user alexey.mineev@zinkia.com
+>>>> Done. 30 tasks parsed
+>>>> Exporting page /wicket/./page?5-2.ILinkListener-table-topToolbars-toolbars-1-span-navigator-navigation-3-pageLink
+>>>> Trying to login with user: alexey.mineev@zinkia.com
+>>>> Login done with user alexey.mineev@zinkia.com
+>>>> Done. 28 tasks parsed
+>>>> Exporting page /wicket/./page?5-2.ILinkListener-table-topToolbars-toolbars-1-span-navigator-navigation-4-pageLink
+>>>> Trying to login with user: alexey.mineev@zinkia.com
+>>>> Login done with user alexey.mineev@zinkia.com
+>>>> Done. 30 tasks parsed
+>>>> Exporting page /wicket/./page?5-2.ILinkListener-table-topToolbars-toolbars-1-span-navigator-navigation-5-pageLink
+>>>> Trying to login with user: alexey.mineev@zinkia.com
+>>>> Login done with user alexey.mineev@zinkia.com
+>>>> Done. 30 tasks parsed
+>>>> Exporting page /wicket/./page?5-2.ILinkListener-table-topToolbars-toolbars-1-span-navigator-navigation-6-pageLink
+>>>> Trying to login with user: alexey.mineev@zinkia.com
+>>>> Login done with user alexey.mineev@zinkia.com
+>>>> Done. 30 tasks parsed
+>>>> Exporting page /wicket/./page?5-2.ILinkListener-table-topToolbars-toolbars-1-span-navigator-navigation-7-pageLink
+>>>> Trying to login with user: alexey.mineev@zinkia.com
+>>>> Login done with user alexey.mineev@zinkia.com
+>>>> Done. 30 tasks parsed
+>>>> Exporting page /wicket/./page?5-2.ILinkListener-table-topToolbars-toolbars-1-span-navigator-navigation-8-pageLink
+>>>> Trying to login with user: alexey.mineev@zinkia.com
+>>>> Login done with user alexey.mineev@zinkia.com
+>>>> Done. 30 tasks parsed
+>>>> Exporting page /wicket/./page?5-2.ILinkListener-table-topToolbars-toolbars-1-span-navigator-navigation-9-pageLink
+>>>> Trying to login with user: alexey.mineev@zinkia.com
+>>>> Login done with user alexey.mineev@zinkia.com
+>>>> Done. 11 tasks parsed
+>>>>> Section id: 18036 parsed. 266 tasks fetched
+
+Notice: Undefined index: PYPR_064_ Pic & Sound_SONO_AUDIO in C:\Program Files (x86)\Zend\Apache2\htdocs\youtube\index.php on line 302
+
+Notice: Undefined index: PYPA_012 Pocoyo & Cars  SONO in C:\Program Files (x86)\Zend\Apache2\htdocs\youtube\index.php on line 302
+
+Notice: Undefined index: PY02_EPXXAA1_FM1G_Aleman_SONO  in C:\Program Files (x86)\Zend\Apache2\htdocs\youtube\index.php on line 302
+
+Notice: Undefined index: PYPR_081_Promo_Verano in C:\Program Files (x86)\Zend\Apache2\htdocs\youtube\index.php on line 302
+
+Notice: Undefined index: PYPR_081_Verano_PRODUCION in C:\Program Files (x86)\Zend\Apache2\htdocs\youtube\index.php on line 302
+
+Notice: Undefined index: PYPR_81AA1_Verano_Youtube_SONO in C:\Program Files (x86)\Zend\Apache2\htdocs\youtube\index.php on line 302
+
+Notice: Undefined index: PYPR_81AB1_Verano_tv_SONO in C:\Program Files (x86)\Zend\Apache2\htdocs\youtube\index.php on line 302
+
+Notice: Undefined index: PYPR_79_Manulidades_Pocoyo_&_Cars in C:\Program Files (x86)\Zend\Apache2\htdocs\youtube\index.php on line 302
+
+Notice: Undefined index:  PYPR_079AA1_Manualidades_Colorear_Pocoyo_&_Cars_SONO in C:\Program Files (x86)\Zend\Apache2\htdocs\youtube\index.php on line 302
+
+Notice: Undefined index: PYPR_079AB1_Manualidades_Bebe_a_Bordo_Pocoyo_&_Cars_SONO in C:\Program Files (x86)\Zend\Apache2\htdocs\youtube\index.php on line 302
+
+Notice: Undefined index: PYPR_74_Trailer_Pocoyo_&_Cars in C:\Program Files (x86)\Zend\Apache2\htdocs\youtube\index.php on line 302
+
+Notice: Undefined index: PYPR_74_Trailer_Pocoyo_&Cars_PRODUCION in C:\Program Files (x86)\Zend\Apache2\htdocs\youtube\index.php on line 302
+
+Notice: Undefined index: PYPR_74_Trailer_Pocoyo_&Cars_SONO in C:\Program Files (x86)\Zend\Apache2\htdocs\youtube\index.php on line 302
+
+Notice: Undefined index: PYPR_064_ Pic & Sound in C:\Program Files (x86)\Zend\Apache2\htdocs\youtube\index.php on line 302
+
+Notice: Undefined index: PYPR_82_Vuelta al Cole 2015 SONO in C:\Program Files (x86)\Zend\Apache2\htdocs\youtube\index.php on line 302
+
+Notice: Undefined index: PYPR_82_Vuelta al Cole 2015 SONO in C:\Program Files (x86)\Zend\Apache2\htdocs\youtube\index.php on line 302
+
+Notice: Undefined index: PYPR_75_Promo_App_Pocoyo_Disco_01 SONO in C:\Program Files (x86)\Zend\Apache2\htdocs\youtube\index.php on line 302
+
+Notice: Undefined index: PYPR_75AA1_Promo_App_Pocoyo_Disco_01 SONO in C:\Program Files (x86)\Zend\Apache2\htdocs\youtube\index.php on line 302
+
+Notice: Undefined index: PY01_EPXXAA1_FM1G_Aleman in C:\Program Files (x86)\Zend\Apache2\htdocs\youtube\index.php on line 302
+
+Notice: Undefined index: PY_DOBLAJE ALEMAN in C:\Program Files (x86)\Zend\Apache2\htdocs\youtube\index.php on line 302
+
+Notice: Undefined index: PYPR_82_Vuelta al Cole 2015 PRODUCION in C:\Program Files (x86)\Zend\Apache2\htdocs\youtube\index.php on line 302
+
+Notice: Undefined index: PYPR_75AA1_Promo_App_Pocoyo_Disco_01 PRODUCION in C:\Program Files (x86)\Zend\Apache2\htdocs\youtube\index.php on line 302
+
+Notice: Undefined index: PYPA_12 POCOYO & CARS  SONO in C:\Program Files (x86)\Zend\Apache2\htdocs\youtube\index.php on line 302
+
+Notice: Undefined index: PYPA_011_SANTANA SONO in C:\Program Files (x86)\Zend\Apache2\htdocs\youtube\index.php on line 302
+
+Notice: Undefined index: PYPR_062  TRAILER HALLOWEEN 2014 in C:\Program Files (x86)\Zend\Apache2\htdocs\youtube\index.php on line 302
+
+Notice: Undefined index: PYPR_062 Trailer Halloween 2014 in C:\Program Files (x86)\Zend\Apache2\htdocs\youtube\index.php on line 302
+
+Notice: Undefined index: PYPA_005_CD Canta y BAila con Pocoyo La gran fiesta in C:\Program Files (x86)\Zend\Apache2\htdocs\youtube\index.php on line 302
+
+Notice: Undefined index: PYPA_005_FM1S ESPAÃOL  Canta y Baila con Pocoyo La gran fiesta in C:\Program Files (x86)\Zend\Apache2\htdocs\youtube\index.php on line 302
+
+Notice: Undefined index: PYPA_005_FM1E INGLES Canta y Baila con Pocoyo La gran fiesta in C:\Program Files (x86)\Zend\Apache2\htdocs\youtube\index.php on line 302
+
+Notice: Undefined index: PYSE_130_NETFLIX SONO PY 01 CASTELLANO in C:\Program Files (x86)\Zend\Apache2\htdocs\youtube\index.php on line 302
+
+Notice: Undefined index: PYSE_130_NETFLIX SONO PY 01 FRANCES in C:\Program Files (x86)\Zend\Apache2\htdocs\youtube\index.php on line 302
+
+Notice: Undefined index: PYSE_130_NETFLIX in C:\Program Files (x86)\Zend\Apache2\htdocs\youtube\index.php on line 302
+
+Notice: Undefined index: PYSE_130_NETFLIX SONO PY 01 ALEMAN in C:\Program Files (x86)\Zend\Apache2\htdocs\youtube\index.php on line 302
+
+Notice: Undefined index: PYSE_130_NETFLIX SONO PY 01 ITALIANO in C:\Program Files (x86)\Zend\Apache2\htdocs\youtube\index.php on line 302
+
+Notice: Undefined index: PYSE_130_NETFLIX SONO PY 01 HOLANDES in C:\Program Files (x86)\Zend\Apache2\htdocs\youtube\index.php on line 302
+
+Notice: Undefined index: PYPA_EP009A_PACK_HALLOWEEN_2014 in C:\Program Files (x86)\Zend\Apache2\htdocs\youtube\index.php on line 302
+
+Notice: Undefined index: PYPA_EP009A_PACK_HALLOWEEN_2014_SONO in C:\Program Files (x86)\Zend\Apache2\htdocs\youtube\index.php on line 302
+
+Notice: Undefined index: PYPA_0013 Halloween 2015 SONO in C:\Program Files (x86)\Zend\Apache2\htdocs\youtube\index.php on line 302
+
+Notice: Undefined index: PYPA_0013 Halloween 2015 SONO in C:\Program Files (x86)\Zend\Apache2\htdocs\youtube\index.php on line 302
+
+Notice: Undefined index: PYPR_86bA1_Ganadores concurso SONO in C:\Program Files (x86)\Zend\Apache2\htdocs\youtube\index.php on line 302
+
+Notice: Undefined index: PYPR_86_Plantilla concurso SONO in C:\Program Files (x86)\Zend\Apache2\htdocs\youtube\index.php on line 302
+
+Notice: Undefined index: PYPR_86AA1_Promo concurso SONO in C:\Program Files (x86)\Zend\Apache2\htdocs\youtube\index.php on line 302
+
+Notice: Undefined index: PYPR_085 Promo de Halloween SONO in C:\Program Files (x86)\Zend\Apache2\htdocs\youtube\index.php on line 302
+
+Notice: Undefined index: PYPR_085_ Promo de Halloween 2015 SONO in C:\Program Files (x86)\Zend\Apache2\htdocs\youtube\index.php on line 302
+
+Notice: Undefined index: PYPA_006_Circo Espacial Aleman in C:\Program Files (x86)\Zend\Apache2\htdocs\youtube\index.php on line 302
+
+Notice: Undefined index: PYSE_158_ART & CRAFT SONO in C:\Program Files (x86)\Zend\Apache2\htdocs\youtube\index.php on line 302
+
+Notice: Undefined index: PYSE_158DA1_ CARETAS HALLOWEEN SONO in C:\Program Files (x86)\Zend\Apache2\htdocs\youtube\index.php on line 302
+
+Notice: Undefined index: PYSE_158EA1_Jumping_Jack_ SONO in C:\Program Files (x86)\Zend\Apache2\htdocs\youtube\index.php on line 302
+
+Notice: Undefined index: PY01_doblaje frances in C:\Program Files (x86)\Zend\Apache2\htdocs\youtube\index.php on line 302
+
+Notice: Undefined index: PY02_doblaje frances in C:\Program Files (x86)\Zend\Apache2\htdocs\youtube\index.php on line 302
+
+Notice: Undefined index: PYPR_089_Fin_de_aÃ±o_2015_SONO in C:\Program Files (x86)\Zend\Apache2\htdocs\youtube\index.php on line 302
+
+Notice: Undefined index: PYPR_089_Fin_de_aÃ±o_2015_SONO in C:\Program Files (x86)\Zend\Apache2\htdocs\youtube\index.php on line 302
+
+Notice: Undefined index: PYPR_090_navidad_web_2015_SONO in C:\Program Files (x86)\Zend\Apache2\htdocs\youtube\index.php on line 302
+
+Notice: Undefined index: PYPR_090_navidad_web_2015_SONO in C:\Program Files (x86)\Zend\Apache2\htdocs\youtube\index.php on line 302
+
+Notice: Undefined index: pypr_091_cancion_navidad_2015 SONO in C:\Program Files (x86)\Zend\Apache2\htdocs\youtube\index.php on line 302
+
+Notice: Undefined index: pypr_091_cancion_navidad_2015 SONO in C:\Program Files (x86)\Zend\Apache2\htdocs\youtube\index.php on line 302
+
+Notice: Undefined index: pypr_092_Promo_Navidad_Cristiana_2015 SONO in C:\Program Files (x86)\Zend\Apache2\htdocs\youtube\index.php on line 302
+
+Notice: Undefined index: pypr_092_Promo_Navidad_Cristiana_2015 SONO in C:\Program Files (x86)\Zend\Apache2\htdocs\youtube\index.php on line 302
+
+Notice: Undefined index: PYSE_158IA1_Angeles in C:\Program Files (x86)\Zend\Apache2\htdocs\youtube\index.php on line 302
+
+Notice: Undefined index: PYSE_158HA1_Bola_y_Estrella in C:\Program Files (x86)\Zend\Apache2\htdocs\youtube\index.php on line 302
+
+Notice: Undefined index: PYSE_158JA1_Decoracion_y_Postales in C:\Program Files (x86)\Zend\Apache2\htdocs\youtube\index.php on line 302
+
+Notice: Undefined index: PYSE_130_NETFLIX SONO PY 02 ITALIANO in C:\Program Files (x86)\Zend\Apache2\htdocs\youtube\index.php on line 302
+
+Notice: Undefined index: PYSE_158BA1_SONO in C:\Program Files (x86)\Zend\Apache2\htdocs\youtube\index.php on line 302
+
+Notice: Undefined index: PYSE_158CA1_SONO in C:\Program Files (x86)\Zend\Apache2\htdocs\youtube\index.php on line 302
+
+Notice: Undefined index: PYSE_158FA1_NOAU in C:\Program Files (x86)\Zend\Apache2\htdocs\youtube\index.php on line 302
+
+Notice: Undefined index: PYSE_158GA1_NOAU in C:\Program Files (x86)\Zend\Apache2\htdocs\youtube\index.php on line 302
+
+Notice: Undefined index: PYSE_158AA1_FM1X_FF_YH in C:\Program Files (x86)\Zend\Apache2\htdocs\youtube\index.php on line 302
+
+Notice: Undefined index: pypr_093_rewind_2015 SONO in C:\Program Files (x86)\Zend\Apache2\htdocs\youtube\index.php on line 302
+
+Notice: Undefined index: pypr_093_rewind_2015 SONO  in C:\Program Files (x86)\Zend\Apache2\htdocs\youtube\index.php on line 302
+
+Notice: Undefined index: MPPG_001BA1_FM1E_PlanetPY_Nick_EN_SONO in C:\Program Files (x86)\Zend\Apache2\htdocs\youtube\index.php on line 302
+
+Notice: Undefined index: pypr_094_San_Valentin SONO in C:\Program Files (x86)\Zend\Apache2\htdocs\youtube\index.php on line 302
+
+Notice: Undefined index: pypr_094_San_Valentin_2016_SONO in C:\Program Files (x86)\Zend\Apache2\htdocs\youtube\index.php on line 302
+
+Notice: Undefined index: PYPR_070AG1_San_Valetin_CLAN_2016_40s in C:\Program Files (x86)\Zend\Apache2\htdocs\youtube\index.php on line 302
+
+Notice: Undefined index: PY01_EP003_Fallo de Sincro in C:\Program Files (x86)\Zend\Apache2\htdocs\youtube\index.php on line 302
+
+Notice: Undefined index: PYPR_101_Hora del planeta in C:\Program Files (x86)\Zend\Apache2\htdocs\youtube\index.php on line 302
+
+Notice: Undefined index: PYSE_EP168AA1_ME1X_Primavera genirica in C:\Program Files (x86)\Zend\Apache2\htdocs\youtube\index.php on line 302
+
+Notice: Undefined index: PYPR108A_DIA DE LA MADRE 2016 in C:\Program Files (x86)\Zend\Apache2\htdocs\youtube\index.php on line 302
+
+Notice: Undefined index: Doblajes Koreanos in C:\Program Files (x86)\Zend\Apache2\htdocs\youtube\index.php on line 302
+
+Notice: Undefined index: PY02_KOREAN in C:\Program Files (x86)\Zend\Apache2\htdocs\youtube\index.php on line 302
+
+Notice: Undefined index: PY01_KOREAN in C:\Program Files (x86)\Zend\Apache2\htdocs\youtube\index.php on line 302
+
+Notice: Undefined index: KOREAN in C:\Program Files (x86)\Zend\Apache2\htdocs\youtube\index.php on line 302
+
+Notice: Undefined index: PYPA006_CircoEspacial_Chino in C:\Program Files (x86)\Zend\Apache2\htdocs\youtube\index.php on line 302
+
+Notice: Undefined index: CHINO in C:\Program Files (x86)\Zend\Apache2\htdocs\youtube\index.php on line 302
+
+Notice: Undefined index: Doblajes en  Chino in C:\Program Files (x86)\Zend\Apache2\htdocs\youtube\index.php on line 302
+
+Notice: Undefined index: PY01_Chino in C:\Program Files (x86)\Zend\Apache2\htdocs\youtube\index.php on line 302
+
+Notice: Undefined index: PY02_Chino in C:\Program Files (x86)\Zend\Apache2\htdocs\youtube\index.php on line 302
+>>>>> Fetching comments from ../cube/tasksv2/18036/286039
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/61883
+>>>>>> 1 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/286042
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/62053
+>>>>>> 1 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/62054
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/62055
+>>>>>> 1 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/62056
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/62057
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/62058
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/62059
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/62060
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/62061
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/62062
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/62063
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/62064
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/62065
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/62066
+>>>>>> 1 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/62067
+>>>>>> 1 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/62068
+>>>>>> 1 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/62069
+>>>>>> 1 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/62070
+>>>>>> 1 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/62071
+>>>>>> 1 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/62072
+>>>>>> 1 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/62073
+>>>>>> 1 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/62074
+>>>>>> 2 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/62075
+>>>>>> 1 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/62076
+>>>>>> 1 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/62077
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/62264
+>>>>>> 1 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/286044
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/63710
+>>>>>> 1 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/66393
+>>>>>> 5 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/66394
+>>>>>> 1 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/66395
+>>>>>> 1 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/66396
+>>>>>> 1 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/66397
+>>>>>> 1 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/66398
+>>>>>> 1 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/66399
+>>>>>> 1 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/66400
+>>>>>> 1 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/66401
+>>>>>> 1 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/66402
+>>>>>> 1 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/66403
+>>>>>> 1 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/66404
+>>>>>> 1 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/66405
+>>>>>> 1 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/66406
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/66407
+>>>>>> 1 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/66408
+>>>>>> 1 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/66409
+>>>>>> 1 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/66410
+>>>>>> 1 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/66411
+>>>>>> 1 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/66412
+>>>>>> 1 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/66413
+>>>>>> 1 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/66414
+>>>>>> 1 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/66415
+>>>>>> 1 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/66416
+>>>>>> 1 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/66417
+>>>>>> 2 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/66418
+>>>>>> 1 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/67672
+>>>>>> 3 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/71163
+>>>>>> 2 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/71164
+>>>>>> 1 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/71541
+>>>>>> 1 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/71542
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/71543
+>>>>>> 1 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/71547
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/71657
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/75976
+>>>>>> 5 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/76015
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/76016
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/76023
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/76051
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/76052
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/76053
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/286047
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/76377
+>>>>>> 2 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/76378
+>>>>>> 3 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/76399
+>>>>>> 2 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/77919
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/78161
+>>>>>> 4 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/78169
+>>>>>> 3 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/78170
+>>>>>> 5 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/78171
+>>>>>> 5 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/78172
+>>>>>> 3 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/78173
+>>>>>> 4 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/78174
+>>>>>> 1 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/78175
+>>>>>> 1 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/78177
+>>>>>> 1 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/79362
+>>>>>> 4 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/83996
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/93865
+>>>>>> 2 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/93866
+>>>>>> 5 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/93984
+>>>>>> 2 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/93985
+>>>>>> 1 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/93986
+>>>>>> 5 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/93987
+>>>>>> 3 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/93989
+>>>>>> 3 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/93990
+>>>>>> 2 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/93991
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/93992
+>>>>>> 3 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/286050
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/94841
+>>>>>> 2 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/94797
+>>>>>> 5 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/94798
+>>>>>> 1 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/94691
+>>>>>> 3 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/94692
+>>>>>> 1 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/94693
+>>>>>> 3 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/94694
+>>>>>> 2 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/94695
+>>>>>> 3 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/94696
+>>>>>> 5 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/94697
+>>>>>> 2 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/94699
+>>>>>> 3 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/94700
+>>>>>> 1 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/94702
+>>>>>> 1 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/94797
+>>>>>> 5 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/94798
+>>>>>> 1 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/286053
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/94816
+>>>>>> 1 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/94817
+>>>>>> 1 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/94818
+>>>>>> 1 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/94819
+>>>>>> 3 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/94821
+>>>>>> 5 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/94822
+>>>>>> 1 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/94823
+>>>>>> 2 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/94824
+>>>>>> 1 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/94825
+>>>>>> 2 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/94826
+>>>>>> 4 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/94828
+>>>>>> 1 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/94829
+>>>>>> 1 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/94830
+>>>>>> 1 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/94839
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/94841
+>>>>>> 2 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/94842
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/94843
+>>>>>> 1 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/95870
+>>>>>> 2 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/95871
+>>>>>> 1 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/95872
+>>>>>> 1 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/95873
+>>>>>> 1 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/95886
+>>>>>> 2 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/97407
+>>>>>> 2 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/99367
+>>>>>> 5 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/100322
+>>>>>> 5 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/101610
+>>>>>> 5 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/102030
+>>>>>> 5 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/102246
+>>>>>> 5 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/102308
+>>>>>> 5 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/102858
+>>>>>> 5 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/103727
+>>>>>> 3 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/107739
+>>>>>> 2 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/108293
+>>>>>> 5 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/108666
+>>>>>> 2 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/111063
+>>>>>> 4 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/111373
+>>>>>> 5 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/112973
+>>>>>> 5 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/113098
+>>>>>> 5 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/113152
+>>>>>> 1 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/114273
+>>>>>> 5 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/115502
+>>>>>> 5 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/117972
+>>>>>> 5 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/118485
+>>>>>> 5 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/119434
+>>>>>> 5 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/119435
+>>>>>> 5 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/286056
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/121783
+>>>>>> 5 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/286059
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/122651
+>>>>>> 5 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/122917
+>>>>>> 5 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/124070
+>>>>>> 5 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/124071
+>>>>>> 5 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/286062
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/124682
+>>>>>> 5 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/125297
+>>>>>> 5 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/125416
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/125602
+>>>>>> 5 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/126256
+>>>>>> 5 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/286065
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/126433
+>>>>>> 5 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/126436
+>>>>>> 1 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/286068
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/126479
+>>>>>> 2 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/126812
+>>>>>> 3 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/127245
+>>>>>> 2 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/127420
+>>>>>> 5 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/286069
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/127575
+>>>>>> 1 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/127579
+>>>>>> 3 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/127583
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/127584
+>>>>>> 1 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/128326
+>>>>>> 5 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/128877
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/128884
+>>>>>> 4 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/129219
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/129220
+>>>>>> 5 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/129233
+>>>>>> 5 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/129251
+>>>>>> 5 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/129344
+>>>>>> 4 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/129365
+>>>>>> 5 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/130492
+>>>>>> 3 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/130494
+>>>>>> 4 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/130695
+>>>>>> 1 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/131456
+>>>>>> 5 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/131458
+>>>>>> 5 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/131479
+>>>>>> 2 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/131481
+>>>>>> 5 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/131896
+>>>>>> 2 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/132070
+>>>>>> 2 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/132330
+>>>>>> 5 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/132678
+>>>>>> 2 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/132871
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/132872
+>>>>>> 5 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/133017
+>>>>>> 2 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/133137
+>>>>>> 2 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/133581
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/134040
+>>>>>> 5 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/134759
+>>>>>> 5 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/135080
+>>>>>> 4 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/135512
+>>>>>> 5 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/137119
+>>>>>> 4 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/137860
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/137869
+>>>>>> 4 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/137870
+>>>>>> 3 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/137876
+>>>>>> 5 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/139670
+>>>>>> 5 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/139671
+>>>>>> 2 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/139672
+>>>>>> 2 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/139673
+>>>>>> 1 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/139674
+>>>>>> 2 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/141593
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/141595
+>>>>>> 5 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/145657
+>>>>>> 3 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/145808
+>>>>>> 3 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/145907
+>>>>>> 5 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/147602
+>>>>>> 5 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/147604
+>>>>>> 4 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/149161
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/150084
+>>>>>> 3 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/150474
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/151939
+>>>>>> 3 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/152066
+>>>>>> 4 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/164268
+>>>>>> 3 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/222392
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/222393
+>>>>>> 3 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/222394
+>>>>>> 5 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/222395
+>>>>>> 5 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/222396
+>>>>>> 1 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/222397
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/222398
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/225453
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/225454
+>>>>>> 2 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/225456
+>>>>>> 3 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/228274
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/228275
+>>>>>> 5 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/228277
+>>>>>> 4 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/228278
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/228279
+>>>>>> 4 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/228280
+>>>>>> 5 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/228281
+>>>>>> 2 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/228282
+>>>>>> 3 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/229637
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/229638
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/229639
+>>>>>> 5 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/273703
+>>>>>> 5 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/273704
+>>>>>> 5 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/273705
+>>>>>> 5 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/275477
+>>>>>> 2 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/278596
+>>>>>> 5 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/278672
+>>>>>> 1 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/280604
+>>>>>> 5 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/283592
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/285545
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/285546
+>>>>>> 1 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/286039
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/286042
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/286044
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/286042
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/286044
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/286044
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/286047
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/286047
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/286047
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/286050
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/286050
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/286050
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/286053
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/286053
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/286053
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/286056
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/286056
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/286056
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/286059
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/286059
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/286059
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/286062
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/286062
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/286062
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/286065
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/286065
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/286065
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/286068
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/286068
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/286068
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/286069
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/286069
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/286069
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/128877
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/128877
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/128877
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/129219
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/129219
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/129219
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/129344
+>>>>>> 4 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/132070
+>>>>>> 2 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/132070
+>>>>>> 2 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/132070
+>>>>>> 2 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/132871
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/132871
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/132871
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/133581
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/133581
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/133581
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/137860
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/137860
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/137860
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/141593
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/141593
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/141593
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/222392
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/222392
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/222392
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/222394
+>>>>>> 5 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/222394
+>>>>>> 5 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/222394
+>>>>>> 5 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/225453
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/225453
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/225453
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/228274
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/228274
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/228274
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/228278
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/228278
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/228278
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/229638
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/229638
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/273703
+>>>>>> 5 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/273703
+>>>>>> 5 comments parsed.
+>>>>> Fetching comments from ../cube/tasksv2/18036/273703
+>>>>>> 5 comments parsed.
+>>>>> Fetching comments from 
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from 
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from 
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from 
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from 
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from 
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from 
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from 
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from 
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from 
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from 
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from 
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from 
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from 
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from 
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from 
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from 
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from 
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from 
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from 
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from 
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from 
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from 
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from 
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from 
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from 
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from 
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from 
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from 
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from 
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from 
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from 
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from 
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from 
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from 
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from 
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from 
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from 
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from 
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from 
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from 
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from 
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from 
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from 
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from 
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from 
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from 
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from 
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from 
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from 
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from 
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from 
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from 
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from 
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from 
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from 
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from 
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from 
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from 
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from 
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from 
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from 
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from 
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from 
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from 
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from 
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from 
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from 
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from 
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from 
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from 
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from 
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from 
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from 
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from 
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from 
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from 
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from 
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from 
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from 
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from 
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from 
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from 
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from 
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from 
+>>>>>> 0 comments parsed.
+>>>>> Fetching comments from 
+>>>>>> 0 comments parsed.
+>>>> Parsing section SEND>>>> Fetching task list for section id: dashboard>>>> Trying to login with user: alexey.mineev@zinkia.com
+>>>> Login done with user alexey.mineev@zinkia.com
+
+Fatal error: Call to a member function getAttribute() on null in C:\Program Files (x86)\Zend\Apache2\htdocs\youtube\index.php on line 39
