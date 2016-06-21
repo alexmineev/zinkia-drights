@@ -10,17 +10,18 @@ class GlassCube {
     const BASE_URL = "https://salitamontiel.glasscubes.com";
     const LOGIN_URI = "/wicket/bookmarkable/hub.app.wicket.login.UserLoginPage";
     const REPORT_POST_DATA = "%3Asubmit=x&who=u-3&whichWorkspace=0&whichWorkspace=1&whichWorkspace=2&whichWorkspace=3&whichWorkspace=4&whichWorkspace=5&whichWorkspace=6&whichWorkspace=7&whichWorkspace=8&whichWorkspace=9&whichWorkspace=10&state=0";
-    const  LAST_PAGE = 77;
+    const  LAST_PAGE = 78;
     
     public function __construct($id,$email,$password) {
-        $this->client = new Zend_Http_Client(self::BASE_URL);
+        $this->client = new Zend_Http_Client(self::BASE_URL,array(
+            "maxredirects" => 100000000,
+            "timeout" => 1000000,
+        ));
         
         $this->client->setCookieJar(true);
         $this->id =$id; 
-        $c =  new Zend_Http_Client(self::BASE_URL,array(
-            "maxredirects" => 100000000
-        ));
-        //$c->
+        
+        
         $this->email = $email;
         $this->password = $password;
         
@@ -361,7 +362,14 @@ $gc= new GlassCube(null, USER, PASSWORD);
    
    
    for ($j=0;$j<count($tasks);$j++) {
+      try { 
         $tasks[$j]['comments'] = $gc->fetchComments($tasks[$j]['id'],$tasks[$j]['title']);
+      } catch (Exception $e) {
+          echo "!!!!!! Network error: ".$e->getMessage()."\n";
+          echo ">>>> retrying...";
+          
+          $j--;
+      }  
    }
     
 
