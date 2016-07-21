@@ -1,0 +1,460 @@
+<!-- <div class="container"> -->
+<!--	<div class="section-tabs clearfix">
+		<ul class="nav nav-tabs">
+			<li class="dropdown active">
+				<a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">Monitor <span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					<li><a href="#">Go to Monitor</a></li>
+					<li class="divider"></li>
+					<li><a href="#">Rename</a></li>
+					<li><a href="#">Close tab</a></li>
+				</ul>
+			</li>
+		</ul>
+
+	</div>-->
+	<!--section-tabs-->
+	<section class="block-box block-box-tabbed">
+              <!-- <div id="$table_nodes$_container">    -->
+		<header class="clearfix" id="$table_nodes$_header">
+
+			<span class="tit pull-left" id="$table_nodes$_label">Nodes</span>
+			<div class="btn-actions pull-left" id="$table_nodes$_actions">
+				<a href="#" title=""><span class="glyphicon glyphicon-list"></span></a>
+				<span class="disabled"><span class="glyphicon glyphicon-list"></span></span>
+				<a href="#" title=""><span class="glyphicon glyphicon-pause"></span></a>
+				<a href="#" title=""><span class="glyphicon glyphicon-play"></span></a>
+				<a href="#" title=""><span class="glyphicon glyphicon-remove"></span></a>
+				<a href="#" title=""><span class="glyphicon glyphicon-refresh"></span></a>
+				<a href="#" title=""><span class="glyphicon glyphicon-play-circle"></span></a>
+				<a href="#" title=""><span class="glyphicon glyphicon-off"></span></a>
+				<a href="#" title=""><span class="glyphicon glyphicon-repeat"></span></a>
+			</div><!--btn-actions-->
+
+			<div class="pull-right">
+				<span class="label label-success mhs">
+                                    <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> <span id="$table_nodes$_nodes_n">N</span> nodes, <span id="$table_nodes$_nodes_wn">N</span> working
+				</span>
+				<a href="#" class="mhs"><span class="glyphicon glyphicon-filter"></span></a>
+				<a href="#" class="mhs max-min-trigger" data-toggle="collapse" data-target="#table-nodes" aria-expanded="true" aria-controls="table-nodes"><span class="glyphicon glyphicon-minus"></span></a>
+			</div><!-- pull-right-->
+
+		</header>
+                  
+		<div class="table-responsive collapse in" id="$table_nodes$">
+			<table class="table table-bordered table-light-blue" id="$table_nodes$_dt">
+				<thead>
+					<tr>
+                                            
+						<th><input type="checkbox" id="$table_nodes$_checkall"/></th>
+                                                <th>Power</th>
+						<th>OS</th>
+						<th>IP</th>
+						<th>Name</th>
+						<th>Status</th>
+						<th>Job name</th>
+						<th>Progress</th>
+						<th>Elapsed time</th>
+						<th>Pool</th>
+                                                <th>CPU Load</th>
+                                                <th>Memory Used</th>
+						
+					</tr>
+				</thead>
+                               <div class="modal fade" id="table_nodes_loading"> 
+                                   <div style="text-align:center;color:white;font-size:25pt">Loading...</div>
+                               </div>    
+				<tbody id="$table_nodes_tbody$">
+					
+				</tbody>
+                              
+			</table>
+		</div><!--collapse-->
+              <!-- </div> -->
+	</section><!--block-box-->
+        
+        <hr id="$table_nodes$_resizeBar" style="z-index: 2;border:outset 3px #000;width:100%;cursor:n-resize" title="Drag to resize between Nodes/Jobs panels."/>
+        
+	<section class="block-box">
+            <!-- <div id="$table_jobs$_container">   -->
+		<header class="clearfix" id="$table_jobs$_header">
+
+			<span class="tit pull-left"  id="$table_jobs$_label">Jobs</span>
+			<div class="btn-actions pull-left" id="$table_jobs$_actions">
+				<a href="#" title=""><span class="glyphicon glyphicon-list"></span></a>
+				<a href="#" title=""><span class="glyphicon glyphicon-menu-hamburger"></span></a>
+				<a href="#" title=""><span class="glyphicon glyphicon-pause"></span></a>
+				<a href="#" title=""><span class="glyphicon glyphicon-play"></span></a>
+				<a href="#" title=""><span class="glyphicon glyphicon-remove"></span></a>
+
+				<a href="#" title=""><span class="glyphicon glyphicon-sort"></span></a>
+
+				<a href="#" title=""><span class="glyphicon glyphicon-refresh"></span></a>
+				<a href="#" title=""><span class="glyphicon glyphicon-repeat"></span></a>
+
+				<a href="#" title=""><span class="ico-btn ico-btn-pool_primary"></span> </a>
+				<a href="#" title=""><span class="ico-btn ico-btn-pool_secondary"></span> </a>
+				<a href="#" title=""><span class="ico-btn ico-btn-node_primary"></span> </a>
+				<a href="#" title=""><span class="ico-btn ico-btn-node_secondary"></span> </a>
+
+				<a href="#" title=""><span class="glyphicon glyphicon-trash"></span></a>
+			</div><!--btn-actions-->
+			<span id="$debug_jobs$">_</span>
+
+			<div class="pull-right">
+				<span class="label label-success mhs">
+                                    <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> <span id="$table_jobs$_jobs_n">{Njobs}</span> jobs, <span id="$table_jobs$_jobs_wn">{NjobsActive}</span> working
+				</span>
+				<a href="#" class="mhs"><span class="glyphicon glyphicon-filter"></span></a>
+				<a href="#" class="mhs max-min-trigger" data-toggle="collapse" data-target="#table-jobs" aria-expanded="true" aria-controls="table-nodes"><span class="glyphicon glyphicon-minus"></span></a>
+			</div><!-- pull-right-->
+
+		</header>
+              
+		<div class="table-responsive collapse in" id="$table_jobs$">
+			<table class="table table-bordered table-light-blue" id="$table_jobs$_dt" style="height:30%;">
+				<thead>
+					<tr>
+
+                                                <th class="details-control"></th>
+						<th><input type="checkbox" id="$table_jobs$_checkall"/></th>
+						<th>ID</th>
+                                                
+						<th>Name</th>
+						<th>Plugin</th>
+						<th>Progress</th>
+						<!--<th>Configuration</th>-->
+						<th>Status</th>
+                                                <th>Start time</th>
+                                                <th>Finish time</th>
+						<th>Priority</th>
+						<th><span class="glyphicon glyphicon-remove-circle color-red" aria-hidden="true"></span></th>
+						<th><span class="glyphicon glyphicon-warning-sign color-orange" aria-hidden="true"></span></th>
+						<th>Primary pools</th>
+						<th>Secondary pools</th>
+						<th>Primary nodes</th> 
+						<th>Secondary nodes</th> 
+						<th>Current Node</th>
+					</tr>
+				</thead>
+				<tbody id="$table_jobs_tbody$">
+					
+				</tbody>
+			</table>
+		</div><!--collapse-->
+            <!-- </div><!--wrapper-->  
+	</section><!--block-box-->
+        
+        <div id="$table_nodes$_nodeLog_container"></div>
+        <div id="$table_nodes$_poolSelector_container"></div>
+        
+<div class="modal fade" id="$table_nodes$_nodeDetails" tabindex="-1" role="dialog" aria-hidden="false">
+<!--<div class="modal fade" id="create-new-job" role="dialog" aria-hidden="false">-->
+		<div class="modal-dialog modal-lg" style="width:90% !important">
+			<div class="modal-content">
+				
+					<div class="modal-header">
+						<button type="button" class="close close_node_btn" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title">Node Details</h4>
+					</div>
+					<div class="modal-body">
+                        <div class="container">
+                    <section class="block-box block-box-tabbed">
+
+		<form>
+
+			<header class="clearfix">
+
+				<span class="tit pull-left">Node actions</span>
+				<div class="btn-actions pull-left" id="$table_nodes$_nodeActions">
+					<a href="#" title=""><span class="glyphicon glyphicon-pause"></span></a>
+					<a href="#" title=""><span class="glyphicon glyphicon-play"></span></a>
+					<a href="#" title=""><span class="glyphicon glyphicon-remove"></span></a>
+					<a href="#" title=""><span class="glyphicon glyphicon-refresh"></span></a>
+					<a href="#" title=""><span class="glyphicon glyphicon-play-circle"></span></a>
+					<a href="#" title=""><span class="glyphicon glyphicon-off"></span></a>
+					<a href="#" title=""><span class="glyphicon glyphicon-repeat"></span></a>
+				</div><!--btn-actions-->
+
+			</header>
+
+			<div class="form-horizontal">
+
+				<fieldset>
+
+					<div class="form-group">
+							<label class="col-sm-1 control-label" for="$table_nodes$_nodeName">Name:</label>
+							<div class="col-sm-1">
+								<p class="form-control-static" id="$table_nodes$_nodeName">{name}</p>
+							</div>
+							<label class="col-sm-2 control-label" for="$table_nodes$_nodeIp">IP:</label>
+							<div class="col-sm-1">
+								<p class="form-control-static" id="$table_nodes$_nodeIp">{ip}</p>
+							</div>
+                                                        <div id="$table_nodes$_nodePool_container">
+                                                            <label class="col-sm-2 control-label" for="$table_nodes$_nodePool">Pool:</label>
+                                                            <div class="col-sm-2">
+                                                            	<select class="form-control" id="$table_nodes$_nodePool">
+                                                            		<option selected="selected">Loading pools...</option>
+                                                            	</select>
+                                                            </div>
+                                                       </div>     
+						</div>
+
+				</fieldset>
+                            
+                            
+<ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active"><a href="#$table_nodes$_nodeConfig" aria-controls="$table_nodes$_nodeConfig" role="tab" data-toggle="tab">Configuration</a></li>  
+    <li role="presentation"><a href="#$table_nodes$_soInfo" aria-controls="$table_nodes$_soInfo" role="tab" data-toggle="tab">SO Info</a></li>
+    <li role="presentation"><a href="#$table_nodes$_hardware" aria-controls="$table_nodes$_hardware" role="tab" data-toggle="tab">Hardware</a></li>
+    <li role="presentation" id="$table_nodes$_nodeJobBtn"><a href="#$table_nodes$_nodeJob" aria-controls="$table_nodes$_nodeJob" role="tab" data-toggle="tab">Current Job</a></li>
+</ul>                            
+                            
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane disabled" id="$table_nodes$_nodeJob">
+                            
+
+				<fieldset class="bordered" id="$table_nodes$_nodeJob">
+
+					<legend>Current job</legend>
+
+					<div class="form-group">
+						<label class="col-sm-1 control-label" for="$table_nodes$_jobName">Name:</label>
+						<div class="col-sm-1">
+							<p class="form-control-static" id="$table_nodes$_jobName">PY4_CAP_o1_SHT14_Reader</p>
+						</div>
+						<label class="col-sm-2 control-label" for="$table_nodes$_jobId">ID:</label>
+						<div class="col-sm-1">
+							<p class="form-control-static" id="$table_nodes$_jobId">000</p>
+						</div>
+						<label class="col-sm-2 control-label" for="$table_nodes$_jobPlugin">Plugin:</label>
+						<div class="col-sm-1">
+							<p class="form-control-static" id="$table_nodes$_jobPlugin">Compressor ZIP</p>
+						</div>
+						<label class="col-sm-2 control-label" for="$table_nodes$_jobConfig">Configuration:</label>
+						<div class="col-sm-1">
+							<p class="form-control-static" id="$table_nodes$_jobConfig">Linux</p>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="col-sm-1 control-label" for="$table_nodes$_jobPrimaryPool">Primary pool:</label>
+						<div class="col-sm-1">
+							<p class="form-control-static" id="$table_nodes$_jobPrimaryPool">Pool 01</p>
+						</div>
+						<label class="col-sm-2 control-label" for="$table_nodes$_jobSecondaryPool">Secondary pool:</label>
+						<div class="col-sm-1">
+							<p class="form-control-static" id="$table_nodes$_jobSecondaryPool">Pool 02</p>
+						</div>
+						<label class="col-sm-2 control-label" for="$table_nodes$_jobPrimaryNodes">Primary nodes:</label>
+						<div class="col-sm-1">
+							<p class="form-control-static" id="$table_nodes$_jobPrimaryNodes">Nodo_001</p>
+						</div>
+						<label class="col-sm-2 control-label" for="$table_nodes$_jobSecondaryNodes">Secondary nodes:</label>
+						<div class="col-sm-1">
+							<p class="form-control-static" id="$table_nodes$_jobSecondaryNodes">Nodo_002</p>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="col-sm-1 control-label" for="$table_nodes$_jobPriority">Priority:</label>
+						<div class="col-sm-1">
+							<p class="form-control-static" id="$table_nodes$_jobPriority">100</p>
+						</div>
+						<label class="col-sm-2 control-label" for="$table_nodes$_leftTimeAvg">Left time (Based in average):</label>
+						<div class="col-sm-1">
+							<p class="form-control-static" id="$table_nodes$_leftTimeAvg">00:02:00</p>
+						</div>
+						<label class="col-sm-2 control-label" for="$table_nodes$_leftTimePerc">Left time (Based in 1%):</label>
+						<div class="col-sm-1">
+							<p class="form-control-static" id="$table_nodes$_leftTimePerc">00:01:47</p>
+						</div>
+						<label class="col-sm-2 control-label" for="$table_nodes$_progress">Progress:</label>
+						<div class="col-sm-3">
+							<div class="form-control-static">
+								
+								  <div id="$table_nodes$_progress">
+								    
+								  </div>
+								
+							</div>
+						</div>
+					</div>
+
+				</fieldset>
+                        </div>
+                          <div role="tabpanel" class="tab-pane" id="$table_nodes$_soInfo">  
+				<fieldset class="bordered">
+
+					<legend>SO info</legend>
+
+					<div class="form-group">
+						<label class="col-sm-1 control-label" for="$table_nodes$_os">SO name:</label>
+						<div class="col-sm-2">
+							<p class="form-control-static" id="$table_nodes$_os">Centos 7.0</p>
+						</div>
+						<label class="col-sm-2 control-label" for="$table_nodes$_bits">Bits:</label>
+						<div class="col-sm-1">
+							<p class="form-control-static" id="$table_nodes$_bits">64</p>
+						</div>
+						<!--<label class="col-sm-2 control-label" for="$table_nodes$_arch">Architecture:</label>
+						<div class="col-sm-1">
+							<p class="form-control-static" id="$table_nodes$_arch">x64</p>
+						</div>
+						<label class="col-sm-2 control-label" for="$table_nodes$_desc">Description:</label>
+						<div class="col-sm-1">
+							<p class="form-control-static" id="$table_nodes$_desc">Linux Centos 7.0</p>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="col-sm-1 control-label" for="$table_nodes$_osVendorName">Vendor name:</label>
+						<div class="col-sm-1">
+							<p class="form-control-static" id="$table_nodes$_osVendorName">Centos</p>
+						</div>
+						<label class="col-sm-2 control-label" for="$table_nodes$_osVersion">Version:</label>
+						<div class="col-sm-1">
+							<p class="form-control-static" id="$table_nodes$_osVersion">7.0</p>
+						</div>
+						<label class="col-sm-2 control-label" for="$table_nodes$_osVendor">Vendor:</label>
+						<div class="col-sm-1">
+							<p class="form-control-static" id="$table_nodes$_osVendor">One</p>
+						</div>-->
+					</div>
+
+				</fieldset>
+                            </div>
+                        <div role="tabpanel" class="tab-pane" id="$table_nodes$_hardware">
+				<fieldset class="bordered">
+
+					<legend>Hardware info</legend>
+
+					<div class="form-group">
+						<label class="col-sm-1 control-label" for="$table_nodes$_cpu">CPU:</label>
+						<div class="col-sm-1">
+							<p class="form-control-static" id="$table_nodes$_cpu">[NO DATA]</p>
+						</div>
+						<label class="col-sm-2 control-label" for="$table_nodes$_mhz">MHZ:</label>
+						<div class="col-sm-1">
+							<p class="form-control-static" id="$table_nodes$_mhz">[NO DATA]</p>
+						</div>
+                                                <label class="col-sm-2 control-label" for="$table_nodes$_totalCores">Total cores:</label>
+						<div class="col-sm-1">
+							<p class="form-control-static" id="$table_nodes$_totalCores">[NO DATA]</p>
+						</div>
+                                                <label class="col-sm-1 control-label" for="$table_nodes$_ram">RAM:</label>
+                                                <div class="col-sm-2">
+							<p class="form-control-static" id="$table_nodes$_ram">[NO DATA]</p>
+						</div>
+						<!--<label class="col-sm-2 control-label" for="$table_nodes$_cache">Cache:</label>
+						<div class="col-sm-1">
+							<p class="form-control-static" id="$table_nodes$_cache">8192KB</p>
+						</div>
+						<label class="col-sm-2 control-label" for="$table_nodes$_cpuVendor">CPU vendor:</label>
+						<div class="col-sm-1">
+							<p class="form-control-static" id="$table_nodes$_cpuVendor">Intel</p>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="col-sm-1 control-label" for="$table_nodes$_totalCores">Total cores:</label>
+						<div class="col-sm-1">
+							<p class="form-control-static" id="$table_nodes$_totalCores">4</p>
+						</div>
+						<label class="col-sm-2 control-label" for="$table_nodes$_totalSockets">Total sockets:</label>
+						<div class="col-sm-1">
+							<p class="form-control-static" id="$table_nodes$_totalSockets">2</p>
+						</div>
+						<label class="col-sm-2 control-label" for="$table_nodes$_coresPerSockets">Cores per sockets:</label>
+						<div class="col-sm-1">
+							<p class="form-control-static" id="$table_nodes$_coresPerSockets">2</p>
+						</div>-->
+					</div>
+
+					<!--<div class="sep"></div>
+					<div class="sep"></div>
+
+					<div class="form-group">
+						<label class="col-sm-1 control-label" for="$table_nodes$_ram">RAM:</label>
+						<div class="col-sm-1">
+							<p class="form-control-static" id="$table_nodes$_ram">12004 MB</p>
+						</div>
+						<label class="col-sm-2 control-label" for="$table_nodes$_mac">MAC address:</label>
+						<div class="col-sm-1">
+							<p class="form-control-static" id="$table_nodes$_mac">F0:E1:D2:C3:B4:A5</p>
+						</div>
+					</div>-->
+
+				</fieldset>
+
+                        </div>
+
+                    <div role="tabpanel" class="tab-pane active" id="$table_nodes$_nodeConfig">
+			<header class="clearfix">
+
+				<span class="tit pull-left">Configuration</span>
+				
+				
+
+			</header>
+
+			<div class="table-responsive collapse in" id="$table_nodes$_config">
+				<table class="table table-bordered table-light-blue" id="$table_nodes$_config_dt">
+					<thead>
+						<tr>
+							<th>Enabled&nbsp; <input type="checkbox" id="$table_nodes$_config_checkall"/></th>
+							<th>Configuration</th>
+							<th>Time test</th>
+                                                        <th></th>
+							
+						</tr>
+					</thead>
+					<tbody>
+						<!--<tr>
+							<td><input type="checkbox" checked /></td>
+							<td>AutoDeskSoftImage</td>
+							<td>AutoDeskSoftImage 2012</td>
+							<td>1O8.371</td>
+							<td><input type="radio" checked /></td>
+						</tr>
+						<tr>
+							<td><input type="checkbox" checked /></td>
+							<td>AutoDeskSoftImage</td>
+							<td>AutoDeskSoftImage 2014</td>
+							<td>115.412</td>
+							<td><input type="radio" /></td>
+						</tr>
+						<tr>
+							<td><input type="checkbox" checked /></td>
+							<td>AutoDeskSoftImage</td>
+							<td>AutoDeskSoftImage 2012</td>
+							<td>91.341.725</td>
+							<td><input type="radio" /></td>
+						</tr>-->
+					</tbody>
+				</table>
+			</div><!--collapse-->
+                            </div>
+                     </div>   
+                   </div><!--end tabs-->
+
+			<p class="text-right">
+				<button type="button" class="btn btn-primary btn-lg " data-dismiss="modal" id="$table_nodes$_saveNodeBtn">Save</button>
+				<button type="button" class="btn btn-danger btn-lg" data-dismiss="modal" id="$table_nodes$_cancelNodeBtn">Cancel</button>
+			</p>
+
+		</form>
+
+	</section><!--block-box-->
+                </div>
+                    
+                </div>
+                        </div>
+                </div>
+</div>
+        <div id="jobLog_container"></div>
+<!-- </div> -->
+<!--container-->
+
+

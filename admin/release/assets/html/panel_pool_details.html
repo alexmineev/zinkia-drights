@@ -1,0 +1,275 @@
+ <div class="modal fade" id="pool_data_popup" tabindex="-1" role="dialog" aria-hidden="false">
+<!--<div class="modal fade" id="create-new-job" role="dialog" aria-hidden="false">-->
+		<div class="modal-dialog modal-lg" style="width:90% !important">
+			<div class="modal-content">
+				
+					<div class="modal-header">
+						<button type="button" class="close close_pool_btn" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title">Pool Details</h4>
+					</div>
+					<div class="modal-body">
+                                            <div class="container">
+
+<section class="block-box block-box-tabbed">
+
+		<header class="clearfix">
+
+			<span class="tit">Pool update</span>
+
+		</header>
+
+		<form>
+
+			<div class="form-horizontal">
+
+				<fieldset class="mtl">
+					<div class="form-group">
+						<label class="col-sm-1 control-label" for="">Name</label>
+						<div class="col-sm-3">
+							<input type="text" class="form-control" placeholder="Name of group" id="poolName" />
+						</div>
+						<label class="col-sm-2 control-label" for="">Description</label>
+						<div class="col-sm-6">
+							<textarea class="form-control resize-none" id="poolDescription"></textarea>
+						</div>
+					</div>
+                                    <div class="form-group">
+                                        <div class="col-sm-2">
+                                            <input type="checkbox" id="poolEnabled" checked="checked"/>&nbsp <b>Enabled</b>
+                                        </div> 
+                                    </div>
+				</fieldset>
+                              <div id="duonodes">  
+				<fieldset class="bordered">
+
+					<legend>Nodes</legend>
+
+					<div class="pull-left col-xs-5 column-triggers">
+
+						<header class="clearfix">
+
+							<span class="tit pull-left">Pool nodes</span>
+							<div class="btn-actions pull-left">
+								<a href="#" title=""><span class="glyphicon glyphicon-list"></span></a>
+							</div><!--btn-actions-->
+
+							<div class="pull-right">
+								<span class="label label-success mhs">
+                                                                    <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> <span id="duonodes_left_nodes_n">{N}</span> pool nodes, <span id="duonodes_left_nodes_rn">{R}</span> Ready, <span id="duonodes_left_nodes_on">{O}</span> Offline
+								</span>
+								<a href="#" class="mhs"><span class="glyphicon glyphicon-filter"></span></a>
+								<a href="#" class="mhs max-min-trigger" data-toggle="collapse" data-target="#duonodes_left" aria-expanded="true" aria-controls="table-nodes"><span class="glyphicon glyphicon-minus"></span></a>
+							</div><!-- pull-right-->
+
+						</header>
+
+						<div class="table-responsive collapse in table-scroll" id="duonodes_left">
+							<table class="table table-bordered" id="duonodes_left_dt">
+								<thead>
+									<tr>
+										<th><input type="checkbox" id="duonodes_left_checkall"/></th>
+                                                                                <th>POWER</th>
+										<th>OS</th>
+                                                                             
+										<th>IP</th>
+										<th>Name</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<!--<tr>
+										<td></td>
+										<td><span class="ico-os ico-os-linux">RedHat Enterprise 7</span></td>
+										<td>RedHat Enterprise 7</td>
+										<td>Nodo 37</td>
+										<td>Ready</td>
+										<td>192.168.2.92</td>
+									</tr>
+									<tr>
+										<td><input type="checkbox" /></td>
+										<td><span class="ico-os ico-os-linux">CentOS 5.7</span></td>
+										<td>CentOS 5.7</td>
+										<td>Nodo 20</td>
+										<td>Ready</td>
+										<td>192.168.2.90</td>
+									</tr>
+									<tr>
+										<td><input type="checkbox" /></td>
+										<td><span class="ico-os ico-os-windows">Microsoft Windows 7</span></td>
+										<td>Microsoft Windows 7</td>
+										<td>Win_nodo_01</td>
+										<td>Ready</td>
+										<td>192.168.2.91</td>
+									</tr>
+									<tr>
+										<td><input type="checkbox" /></td>
+										<td><span class="ico-os ico-os-windows">Microsoft Windows 8</span></td>
+										<td>Microsoft Windows 8</td>
+										<td>Win_nodo_02</td>
+										<td>Ready</td>
+										<td>192.168.2.11</td>
+									</tr>
+									<tr>
+										<td><input type="checkbox" /></td>
+										<td><span class="ico-os ico-os-windows">Microsoft Windows 8</span></td>
+										<td>Microsoft Windows 8</td>
+										<td>Win_nodo_03</td>
+										<td>Ready</td>
+										<td>192.168.2.12</td>
+									</tr>
+									<tr>
+										<td><input type="checkbox" /></td>
+										<td><span class="ico-os ico-os-mac">OS X 10.9.5</span></td>
+										<td>OS X 10.9.5</td>
+										<td>LVNODO26</td>
+										<td>Ready</td>
+										<td>192.168.1.110</td>
+									</tr>
+									<tr>
+										<td><input type="checkbox" /></td>
+										<td><span class="ico-os ico-os-mac">OS X 10.9.5</span></td>
+										<td>OS X 10.9.5</td>
+										<td>node_mac_02</td>
+										<td>Ready</td>
+										<td>192.168.1.111</td>
+									</tr>
+									<tr>
+										<td><input type="checkbox" /></td>
+										<td><span class="ico-os ico-os-linux">CentOS 5.7</span></td>
+										<td>CentOS 5.7</td>
+										<td>Nodo 21</td>
+										<td>Offline</td>
+										<td>192.168.1.117</td>
+									</tr>
+									<tr>
+										<td><input type="checkbox" /></td>
+										<td><span class="ico-os ico-os-linux">CentOS 5.7</span></td>
+										<td>CentOS 5.7</td>
+										<td>Nodo 22</td>
+										<td>Offline</td>
+										<td>192.168.1.117</td>
+									</tr>
+									<tr>
+										<td><input type="checkbox" /></td>
+										<td><span class="ico-os ico-os-windows">Microsoft Windows 7</span></td>
+										<td>Microsoft Windows 7</td>
+										<td>Win_nodo_11</td>
+										<td>Offline</td>
+										<td>192.168.1.11</td>
+									</tr>-->
+								</tbody>
+							</table>
+						</div><!--collapse-->
+
+					</div>
+
+					<div class="pull-left col-xs-2 column-triggers move-column-triggers text-center">
+
+						<a href="#" class="trigger" id="duonodes_right_trigger"><span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"></span></a>
+						<a href="#" class="trigger" id="duonodes_left_trigger"><span class="glyphicon glyphicon-circle-arrow-left" aria-hidden="true"></span></a>
+
+					</div>
+
+					<div class="pull-right col-xs-5 column-triggers">
+
+
+						<header class="clearfix">
+
+							<span class="tit pull-left">Available nodes</span>
+							<div class="btn-actions pull-left">
+								<a href="#" title=""><span class="glyphicon glyphicon-list"></span></a>
+							</div><!--btn-actions-->
+
+							<div class="pull-right">
+								<span class="label label-success mhs">
+                                                                    <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> <span id="duonodes_right_nodes_n">{n}</span> pool nodes, <span id="duonodes_right_nodes_rn">{n}</span> Ready
+								</span>
+								<a href="#" class="mhs"><span class="glyphicon glyphicon-filter"></span></a>
+								<a href="#" class="mhs max-min-trigger" data-toggle="collapse" data-target="#duonodes_right" aria-expanded="true" aria-controls="duonodes_right"><span class="glyphicon glyphicon-minus"></span></a>
+							</div><!-- pull-right-->
+
+						</header>
+
+						<div class="table-responsive collapse in table-scroll" id="duonodes_right">
+							<table class="table table-bordered" id="duonodes_right_dt">
+								<thead>
+									<tr>
+										<th><input type="checkbox" id="duonodes_right_checkall"/></th>
+										<th>OS</th>
+										<th>IP</th>
+										<th>Name</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody><!--
+									<tr>
+										<td><input type="checkbox" /></td>
+										<td><span class="ico-os ico-os-linux">RedHat Enterprise 6</span></td>
+										<td>RedHat Enterprise 6</td>
+										<td>Nodo 25</td>
+										<td>Ready</td>
+										<td>192.168.2.92</td>
+									</tr>
+									<tr>
+										<td><input type="checkbox" /></td>
+										<td><span class="ico-os ico-os-linux">CentOS 5.8</span></td>
+										<td>CentOS 5.8</td>
+										<td>LVNODO05</td>
+										<td>Ready</td>
+										<td>192.168.2.90</td>
+									</tr>
+									<tr>
+										<td><input type="checkbox" checked /></td>
+										<td><span class="ico-os ico-os-windows">Microsoft Windows 7</span></td>
+										<td>Microsoft Windows 7</td>
+										<td>WinNODO07</td>
+										<td>Ready</td>
+										<td>10.11.2.5</td>
+									</tr>
+									<tr>
+										<td><input type="checkbox" /></td>
+										<td><span class="ico-os ico-os-windows">Microsoft Windows 7</span></td>
+										<td>Microsoft Windows 7</td>
+										<td>Nodo 10</td>
+										<td>Ready</td>
+										<td>10.11.10.1</td>
+									</tr>
+									<tr>
+										<td><input type="checkbox" /></td>
+										<td><span class="ico-os ico-os-windows">Microsoft Windows 7</span></td>
+										<td>Microsoft Windows 7</td>
+										<td>Nodo 09</td>
+										<td>Ready</td>
+										<td>10.11.10.33</td>
+									</tr>-->
+								</tbody>
+							</table>
+						</div><!--end right table-->
+
+					</div>
+
+				</fieldset>
+                               </div><!--/duoNodes -->
+
+				<p class="text-right">
+					<button type="button" class="btn btn-primary btn-lg save_pool_btn">Save</button>
+					<button type="button" class="btn btn-danger btn-lg close_pool_btn" >Cancel</button>
+				</p>
+
+			</div><!--form-horizontal-->
+
+		</form>
+
+
+
+	</section><!--block-box-->
+
+
+</div><!--container-->
+
+                                        </div>
+                        </div> 
+                </div>
+    </div>
+                                            
+

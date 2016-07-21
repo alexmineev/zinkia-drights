@@ -1,0 +1,22 @@
+{
+    "debug": false,
+    "updateInterval": 5000,
+    "table": {
+        "animation": false,
+        "defaultPageSize": 30,
+        "disableHeaderUpdate" : true
+    },
+    "cpuMeter": {
+         "good":20,
+         "normal":50,
+         "warning":80
+    },
+    "memoryMeter": {
+         "good":20,
+         "normal":50,
+         "warning":80
+    },
+    "animations" : false,
+    "handleRuntimeEvents": false,
+    "initialPanel" :"panel_monitor"
+}

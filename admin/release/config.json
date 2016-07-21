@@ -1,0 +1,26 @@
+{
+    
+    "appName": "ZnkCroupier Administrator",
+    "appVersion":"1.0.0",
+    
+    "jsDir": "assets/js", 
+    "definesFile": "define.js",
+    "widgetsTemplatesFile": "assets/html/widgets.html",
+    "debug":false,
+    "consoleLog": false,
+    "table": {
+        "animation": true,
+        "defaultPageSize": 30,
+        "disableHeaderUpdate" : true
+    },
+    
+    "animations" : true,
+    "handleRuntimeEvents": true,
+    "initialPanel" : "panel_monitor",
+    
+    
+    "classes" : [
+            "admin.js"
+    ]
+    
+}

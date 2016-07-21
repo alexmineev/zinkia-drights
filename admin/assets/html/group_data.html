@@ -1,0 +1,646 @@
+ <div class="modal fade" id="panel_group_data_popup" tabindex="-1" role="dialog" aria-hidden="false">
+<!--<div class="modal fade" id="create-new-job" role="dialog" aria-hidden="false">-->
+		<div class="modal-dialog modal-lg" style="width:90% !important">
+			<div class="modal-content">
+				
+					<div class="modal-header">
+						<button type="button" class="groups_data_close_btn close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title">Group Details</h4>
+					</div>
+					<div class="modal-body">
+                                            <div class="container">
+
+
+<section class="block-box block-box-tabbed"  id="section_group_data">
+
+		<header class="clearfix">
+
+			<span class="tit">Group update</span>
+
+		</header>
+
+		<form>
+
+			<div class="form-horizontal">
+
+				<fieldset class="mtl">
+					<div class="form-group">
+						<label class="col-sm-1 control-label" for="groupName">Name</label>
+						<div class="col-sm-3">
+							<input type="text" id="groupName" class="form-control" placeholder="Name of group" />
+						</div>
+						<label class="col-sm-2 control-label" for="groupDescription">Description</label>
+						<div class="col-sm-6">
+							<textarea class="form-control resize-none" id="groupDescription"></textarea>
+						</div>
+					</div>
+                                    			</fieldset>
+                            
+                            <div style="float:right" class="panel-newmode-only">
+                                <label class="col-sm-6 control-label" for="groupPermission">New group permission</label>
+						<div class="col-sm-5">
+                                                    <select id="groupPermission">
+                                                        <option value="-1">NONE</option>
+                                                        <option value="0">VIEW</option>
+                                                        <option value="1">MODIFY</option>
+                                                    </select>
+						</div>
+                                
+                            </div>    
+                            <div>
+<ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active"><a href="#tab_users" aria-controls="tab_users" role="tab" data-toggle="tab">Users</a></li>
+    <li role="presentation"><a href="#tab_plugins" aria-controls="tab_plugins" role="tab" data-toggle="tab">Plugins</a></li>
+    <li role="presentation"><a href="#tab_pools" aria-controls="tab_pools" role="tab" data-toggle="tab">Pools</a></li>
+    <li role="presentation"><a href="#tab_groups" aria-controls="tab_groups" role="tab" data-toggle="tab">Groups</a></li>
+</ul>                            
+                            
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="tab_users">
+            
+             <div data-widget="DuoTables" id="duousers">
+				<fieldset class="bordered">
+
+					<legend data-type="label">Users</legend>
+
+					<div class="pull-left col-xs-5 column-triggers">
+
+						<header class="clearfix">
+
+							<span class="tit pull-left">User List</span>
+							<div class="btn-actions pull-left">
+								<a href="#" title=""><span class="glyphicon glyphicon-list"></span></a>
+							</div><!--btn-actions-->
+
+							<div class="pull-right">
+								<span class="label label-success mhs">
+                                                                    <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> <span id="duousers_left_n">n</span> users
+								</span>
+								<a href="#" class="mhs"><span class="glyphicon glyphicon-filter"></span></a>
+								<a href="#" class="mhs max-min-trigger" data-toggle="collapse" data-target="#table-users" aria-expanded="true" aria-controls="table-nodes"><span class="glyphicon glyphicon-minus"></span></a>
+							</div><!-- pull-right-->
+
+						</header>
+
+						<div class="table-responsive collapse in table-scroll" id="duousers_left">
+							<table class="table table-bordered" id="duousers_left_dt">
+								<thead>
+									<tr>
+										<th><input type="checkbox" id="duousers_left_checkall"/></th>
+										<th>Nick</th>
+										<th>Name</th>
+										<th>Surname</th>
+									</tr>
+								</thead>
+								<tbody>
+									<!--<tr>
+										<td><input type="checkbox" /></td>
+										<td>Lolo</td>
+										<td>lolo</td>
+										<td>García</td>
+									</tr>
+									<tr>
+										<td><input type="checkbox" /></td>
+										<td>Eva</td>
+										<td>Eva</td>
+										<td>Lzaro</td>
+									</tr>
+									<tr>
+										<td><input type="checkbox" /></td>
+										<td>Miner</td>
+										<td>Minerva</td>
+										<td>L�pez</td>
+									</tr>
+									<tr>
+										<td><input type="checkbox" /></td>
+										<td>Anton</td>
+										<td>Antonio</td>
+										<td>Rodr�guez</td>
+									</tr>
+									<tr>
+										<td><input type="checkbox" /></td>
+										<td>Eu</td>
+										<td>Eufemia</td>
+										<td>Mart�n</td>
+									</tr>-->
+								</tbody>
+							</table>
+						</div><!--collapse-->
+
+					</div>
+
+					<div class="pull-left col-xs-2 column-triggers move-column-triggers text-center">
+
+						<a href="#" class="trigger" id="duousers_right_trigger"><span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"></span></a>
+						<a href="#" class="trigger" id="duousers_left_trigger"><span class="glyphicon glyphicon-circle-arrow-left" aria-hidden="true"></span></a>
+
+					</div>
+
+					<div class="pull-right col-xs-5 column-triggers">
+
+						<header class="clearfix">
+
+							<span class="tit pull-left">Other Users</span>
+							<div class="btn-actions pull-left">
+								<a href="#" title=""><span class="glyphicon glyphicon-list"></span></a>
+							</div><!--btn-actions-->
+
+							<div class="pull-right">
+								<span class="label label-success mhs">
+                                                                    <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> <span id="duousers_right_n">n</span> users
+								</span>
+								<a href="#" class="mhs"><span class="glyphicon glyphicon-filter"></span></a>
+								<a href="#" class="mhs max-min-trigger" data-toggle="collapse" data-target="#table-other-users" aria-expanded="true" aria-controls="table-nodes"><span class="glyphicon glyphicon-minus"></span></a>
+							</div><!-- pull-right-->
+
+						</header>
+
+						<div class="table-responsive collapse in table-scroll" id="duousers_right">
+							<table class="table table-bordered" id="duousers_right_dt">
+								<thead>
+									<tr>
+										<th><input type="checkbox" id="duousers_right_checkall"/></th>
+										<th>Nick</th>
+										<th>Name</th>
+										<th>Surname</th>
+									</tr>
+								</thead>
+								<tbody>
+									<!--<tr>
+										<td><input type="checkbox" /></td>
+										<td>Nick1</td>
+										<td>Ra�l</td>
+										<td>G�mez</td>
+									</tr>
+									<tr>
+										<td><input type="checkbox" /></td>
+										<td>Maria</td>
+										<td>Mar�a</td>
+										<td>L�zaro</td>
+									</tr>
+									<tr>
+										<td><input type="checkbox" /></td>
+										<td>Monica</td>
+										<td>M�nica</td>
+										<td>L�pez</td>
+									</tr>
+									<tr>
+										<td><input type="checkbox" /></td>
+										<td>Nick2</td>
+										<td>Miriam</td>
+										<td>Rodr�guez</td>
+									</tr>
+									<tr>
+										<td><input type="checkbox" /></td>
+										<td>Nick3</td>
+										<td>Laura</td>
+										<td>Mart�n</td>
+									</tr>-->
+								</tbody>
+							</table>
+						</div><!--collapse-->
+
+					</div>
+
+                                    </fieldset>
+                                </div>
+            
+                    </div>
+        <div role="tabpanel" class="tab-pane" id="tab_plugins">
+            <fieldset class="bordered">
+
+					<legend>Configuration plugins</legend>
+
+					<p class="col-xs-10">
+						<label class="radio-inline">
+							<input type="checkbox" id="duoplugins_all" /> <strong>Assign to all</strong>
+						</label>
+						<label class="radio-inline">
+							<select id="duoplugins_all_perm" disabled="disabled" class="permissionsSelect" style="display:none">                                                          
+                                                        </select>
+						</label>
+					</p>
+                                <div id="duoplugins">
+					<div class="pull-left col-xs-5 column-triggers">
+
+						<header class="clearfix">
+
+							<span class="tit pull-left">Configuration-plugins List</span>
+							<div class="btn-actions pull-left">
+								<a href="#" title=""><span class="glyphicon glyphicon-list"></span></a>
+							</div><!--btn-actions-->
+
+							<div class="pull-right">
+								<span class="label label-success mhs">
+                                                                    <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> <span id="duoplugins_left_n">N</span> plugins
+								</span>
+								<a href="#" class="mhs"><span class="glyphicon glyphicon-filter"></span></a>
+								<a href="#" class="mhs max-min-trigger" data-toggle="collapse" data-target="#table-configutation-plugins" aria-expanded="true" aria-controls="table-nodes"><span class="glyphicon glyphicon-minus"></span></a>
+							</div><!-- pull-right-->
+
+						</header>
+
+						<div class="table-responsive collapse in table-scroll" id="duoplugins_left">
+							<table class="table table-bordered" id="duoplugins_left_dt">
+								<thead>
+									<tr>
+										<th><input type="checkbox" id="duoplugins_left_checkall"/></th>
+										<th>Name</th>
+                                                                                <th>Enabled</th>
+                                                                                <th>Plugin</th>
+										
+										
+									</tr>
+								</thead>
+								<tbody>
+									<!--<tr>
+										<td><input type="checkbox" /></td>
+										<td><img src="assets/images/ico/ico-autodesk.png" alt="" style="border:2px solid #FF0000" /></td>
+										<td>SoftImage 2012</td>
+										<td>#FF0000</td>
+										<td>AutoDeskSoftImage</td>
+										<td><input type="radio" checked /></td>
+									</tr>
+									<tr>
+										<td><input type="checkbox" /></td>
+										<td><img src="assets/images/ico/ico-autodesk.png" alt="" style="border:2px solid #0431B4" /></td>
+										<td>SoftImage 2014</td>
+										<td>#0431B4</td>
+										<td>AutoDeskSoftImage</td>
+										<td><input type="radio" /></td>
+									</tr>-->
+                                                                        <tr>
+                                                                            <td colspan="5" style="text-align:center">DATATABLE NOT INITIALIZED</td>
+                                                                        </tr>
+								</tbody>
+							</table>
+						</div><!--collapse-->
+
+					</div>
+
+					<div class="pull-left col-xs-2 column-triggers move-column-triggers text-center">
+
+						<a href="#" class="trigger" id="duoplugins_right_trigger"><span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true" id="duoplugins_trigger_right"></span></a>
+						<a href="#" class="trigger" id="duoplugins_left_trigger"><span class="glyphicon glyphicon-circle-arrow-left" aria-hidden="true" id="duoplugins_trigger_left"></span></a>
+
+					</div>
+
+					<div class="pull-right col-xs-5 column-triggers">
+
+						<header class="clearfix">
+
+							<span class="tit pull-left">Other configuration plugins</span>
+							<div class="btn-actions pull-left">
+								<a href="#" title=""><span class="glyphicon glyphicon-list"></span></a>
+							</div><!--btn-actions-->
+
+							<div class="pull-right">
+								<span class="label label-success mhs">
+                                                                    <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> <span id="duoplugins_right_n">N</span>plugins
+								</span>
+								<a href="#" class="mhs"><span class="glyphicon glyphicon-filter"></span></a>
+								<a href="#" class="mhs max-min-trigger" data-toggle="collapse" data-target="#table-other-configutation-plugins" aria-expanded="true" aria-controls="table-nodes"><span class="glyphicon glyphicon-minus"></span></a>
+							</div><!-- pull-right-->
+
+						</header>
+
+						<div class="table-responsive collapse in table-scroll" id="duoplugins_right">
+							<table class="table table-bordered" id="duoplugins_right_dt">
+								<thead>
+									<tr>
+										<th><input type="checkbox" id="duoplugins_right_checkall"/></th>
+										<th>Name</th>
+                                                                                <th>Enabled</th>
+                                                                                <th>Plugin</th>
+									</tr>
+								</thead>
+								<tbody><!--
+									<tr>
+										<td><input type="checkbox" /></td>
+										<td><img src="assets/images/ico/ico-imagemagick.png" alt="" style="border:2px solid #04B431" /></td>
+										<td>ImageMagick-6.9.0-5</td>
+										<td>#04B431</td>
+										<td>ImageMagick</td>
+									</tr>
+									<tr>
+										<td><input type="checkbox" /></td>
+										<td><img src="assets/images/ico/ico-imagemagick.png" alt="" style="border:2px solid #380B61" /></td>
+										<td>ImageMagick-7</td>
+										<td>#380B61</td>
+										<td>ImageMagick</td>
+									</tr>-->
+                                                                     <tr>
+                                                                            <td colspan="5" style="text-align:center">DATATABLE NOT INITIALIZED</td>
+                                                                        </tr>
+								</tbody>
+							</table>
+						</div><!--collapse-->
+
+					</div>
+                                </div>
+				</fieldset>
+            
+        </div>
+        <div role="tabpanel" class="tab-pane" id="tab_pools">
+            <fieldset class="bordered">
+
+					<legend>Permissions pools</legend>
+
+					<p class="col-xs-10">
+						<label class="radio-inline">
+							<input type="checkbox" id="duopools_all" /> <strong>Assign to all</strong>
+						</label>
+						<label class="radio-inline">
+							<select id="duopools_all_perm" disabled="disabled" class="permissionsSelect">                                                          
+                                                        </select>
+						</label>
+					</p>
+                                    <div id="duopools">        
+					<div class="pull-left col-xs-5 column-triggers">
+
+						<header class="clearfix">
+
+							<span class="tit pull-left">Pools</span>
+							<div class="btn-actions pull-left">
+								<a href="#" title=""><span class="glyphicon glyphicon-list"></span></a>
+							</div><!--btn-actions-->
+
+							<div class="pull-right">
+								<span class="label label-success mhs">
+                                                                    <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> <span id="duopools_left_n">N</span> pools, <span id="duopools_left_nu">N</span> usable, <span id="duopools_left_nm">N</span> modifiable
+								</span>
+								<a href="#" class="mhs"><span class="glyphicon glyphicon-filter"></span></a>
+								<a href="#" class="mhs max-min-trigger" data-toggle="collapse" data-target="#table-permission-pools" aria-expanded="true" aria-controls="table-nodes"><span class="glyphicon glyphicon-minus"></span></a>
+							</div><!-- pull-right-->
+
+						</header>
+
+						<div class="table-responsive collapse in table-scroll" id="duopools_left">
+							<table class="table table-bordered" id="duopools_left_dt">
+								<thead>
+									<tr>
+										<th><input type="checkbox" id="duopools_left_checkall"/></th>
+										<th>Nodes</th>
+                                                                                <th>Name</th>
+										<th>Permission</th>
+									</tr>
+								</thead>
+								<tbody>
+                                                                    <tr>
+                                                                            <td colspan="5" style="text-align:center">DATATABLE NOT INITIALIZED</td>
+                                                                    </tr>
+                                                                    <!--
+									<tr>
+										<td><input type="checkbox" /></td>
+										<td>Fixing</td>
+										<td>12</td>
+										<td><input type="radio" checked /></td>
+										<td><input type="radio" checked /></td>
+									</tr>
+									<tr>
+										<td><input type="checkbox" /></td>
+										<td>HD</td>
+										<td>15</td>
+										<td><input type="radio" /></td>
+										<td><input type="radio" /></td>
+									</tr>
+									<tr>
+										<td><input type="checkbox" /></td>
+										<td>Prepro</td>
+										<td>4</td>
+										<td><input type="radio" /></td>
+										<td><input type="radio" /></td>
+									</tr>-->
+                                                                    
+								</tbody>
+							</table>
+						</div><!--collapse-->
+
+					</div>
+
+					<div class="pull-left col-xs-2 column-triggers move-column-triggers text-center">
+
+						<a href="#" class="trigger" id="duopools_right_trigger"><span class="glyphicon glyphicon-circle-arrow-right" id="duopools_trigger_right" aria-hidden="true"></span></a>
+						<a href="#" class="trigger" id="duopools_left_trigger"><span class="glyphicon glyphicon-circle-arrow-left" id="duopools_trigger_left" aria-hidden="true"></span></a>
+
+					</div>
+
+					<div class="pull-right col-xs-5 column-triggers">
+
+						<header class="clearfix">
+
+							<span class="tit pull-left">Other pools</span>
+							<div class="btn-actions pull-left">
+								<a href="#" title=""><span class="glyphicon glyphicon-list"></span></a>
+							</div><!--btn-actions-->
+
+							<div class="pull-right">
+								<span class="label label-success mhs">
+                                                                    <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> <span id="duopools_right_n">N</span> Pools
+								</span>
+								<a href="#" class="mhs"><span class="glyphicon glyphicon-filter"></span></a>
+								<a href="#" class="mhs max-min-trigger" data-toggle="collapse" data-target="#table-other-permission-pools" aria-expanded="true" aria-controls="table-nodes"><span class="glyphicon glyphicon-minus"></span></a>
+							</div><!-- pull-right-->
+
+						</header>
+
+						<div class="table-responsive collapse in table-scroll" id="duopools_right">
+							<table class="table table-bordered" id="duopools_right_dt">
+								<thead>
+									<tr>
+										<th><input type="checkbox" id="duopools_right_checkall"/></th>
+										<th>Nodes</th>
+										<th>Name</th>
+									</tr>
+								</thead>
+								<tbody><!--
+									<tr>
+										<td><input type="checkbox" checked /></td>
+										<td>A&amp;V</td>
+										<td>15</td>
+									</tr>
+									<tr>
+										<td><input type="checkbox" /></td>
+										<td>Flash</td>
+										<td>10</td>
+									</tr>
+									<tr>
+										<td><input type="checkbox" /></td>
+										<td>All</td>
+										<td>45</td>
+									</tr>-->
+                                                                    <tr>
+                                                                            <td colspan="5" style="text-align:center">DATATABLE NOT INITIALIZED</td>
+                                                                        </tr>
+								</tbody>
+							</table>
+						</div><!--collapse-->
+
+					</div>
+                                    </div>
+				</fieldset>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="tab_groups">
+            <fieldset class="bordered">
+
+					<legend>Permissions between Groups/Jobs</legend>
+
+					<p class="col-xs-10">
+						<label class="radio-inline">
+                                                    <input type="checkbox" id="duogroupsperm_all" /> <strong>Assign to all</strong>
+						</label>
+						<label class="radio-inline">
+							<select id="duogroupsperm_all_perm" disabled="disabled" class="permissionsSelect">                                                          
+                                                        </select>
+						</label>
+					</p>
+                                     <div id="duogroupsperm">   
+					<div class="pull-left col-xs-5 column-triggers">
+
+						<header class="clearfix">
+
+							<span class="tit pull-left">Groups</span>
+							<div class="btn-actions pull-left">
+								<a href="#" title=""><span class="glyphicon glyphicon-list"></span></a>
+							</div><!--btn-actions-->
+
+							<div class="pull-right">
+								<span class="label label-success mhs">
+                                                                    <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> <span id="duogroupsperm_left_n">N</span>groups, <span id="duogroupsperm_left_nm">N</span> modifiable job
+								</span>
+								<a href="#" class="mhs"><span class="glyphicon glyphicon-filter"></span></a>
+								<a href="#" class="mhs max-min-trigger" data-toggle="collapse" data-target="#table-relationships-groups" aria-expanded="true" aria-controls="table-nodes"><span class="glyphicon glyphicon-minus"></span></a>
+							</div><!-- pull-right-->
+
+						</header>
+
+						<div class="table-responsive collapse in table-scroll" id="duogroupsperm_left">
+							<table class="table table-bordered" id="duogroupsperm_left_dt">
+								<thead>
+									<tr>
+										<th><input type="checkbox" id="duogroupsperm_left_checkall"/></th>
+										<th>Name</th>
+										<th>N� users</th>
+										<th>Permissions</th>
+									</tr>
+								</thead>
+								<tbody>
+									<!--<tr>
+										<td><input type="checkbox" /></td>
+										<td>Fixing</td>
+										<td>12</td>
+										<td><input type="radio" checked /></td>
+									</tr>
+									<tr>
+										<td><input type="checkbox" /></td>
+										<td>2D</td>
+										<td>15</td>
+										<td><input type="radio" /></td>
+									</tr>
+									<tr>
+										<td><input type="checkbox" /></td>
+										<td>Prepro</td>
+										<td>8</td>
+										<td><input type="radio" /></td>
+									</tr>-->
+                                                                      <tr>
+                                                                            <td colspan="5" style="text-align:center">DATATABLE NOT INITIALIZED</td>
+                                                                      </tr>
+								</tbody>
+							</table>
+						</div><!--collapse-->
+
+					</div>
+
+					<div class="pull-left col-xs-2 column-triggers move-column-triggers text-center">
+
+						<a href="#" class="trigger" id="duogroupsperm_right_trigger"><span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true" id="duogroupsperm_trigger_left"></span></a>
+						<a href="#" class="trigger" id="duogroupsperm_left_trigger"><span class="glyphicon glyphicon-circle-arrow-left" aria-hidden="true"></span></a>
+
+					</div>
+
+					<div class="pull-right col-xs-5 column-triggers">
+
+						<header class="clearfix">
+
+							<span class="tit pull-left">Other groups</span>
+							<div class="btn-actions pull-left">
+								<a href="#" title=""><span class="glyphicon glyphicon-list"></span></a>
+							</div><!--btn-actions-->
+
+							<div class="pull-right">
+								<span class="label label-success mhs">
+                                                                    <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> <span id="duogroupsperm_right_n"></span> Groups
+								</span>
+								<a href="#" class="mhs"><span class="glyphicon glyphicon-filter"></span></a>
+								<a href="#" class="mhs max-min-trigger" data-toggle="collapse" data-target="#table-relationships-other-groups" aria-expanded="true" aria-controls="table-nodes"><span class="glyphicon glyphicon-minus"></span></a>
+							</div><!-- pull-right-->
+
+						</header>
+
+						<div class="table-responsive collapse in table-scroll" id="duogroupsperm_right">
+							<table class="table table-bordered" id="duogroupsperm_right_dt">
+								<thead>
+									<tr>
+										<th><input type="checkbox" id="duogroupsperm_right_checkall"/></th>
+										<th>Name</th>
+										<th>N� users</th>
+									</tr>
+								</thead>
+								<tbody><!--
+									<tr>
+										<td><input type="checkbox" checked /></td>
+										<td>Post-Pro</td>
+										<td>12</td>
+									</tr>
+									<tr>
+										<td><input type="checkbox" /></td>
+										<td>3D</td>
+										<td>15</td>
+									</tr>
+									<tr>
+										<td><input type="checkbox" /></td>
+										<td>Animation</td>
+										<td>2</td>
+									</tr>-->
+                                                                    <tr>
+                                                                            <td colspan="5" style="text-align:center">DATATABLE NOT INITIALIZED</td>
+                                                                      </tr>
+								</tbody>
+							</table>
+						</div><!--collapse-->
+
+					</div>
+                                     </div>
+				</fieldset>
+        </div>
+    </div>
+                            </div>                 
+                            
+                            
+                           
+                            
+				
+
+				
+
+				
+
+				<p class="text-right">
+					<button type="button" class="btn btn-primary btn-lg groups_data_save_btn" id="groups_data_save_btn">Save</button>
+					<button type="button" class="btn btn-danger btn-lg groups_data_close_btn">Cancel</button>
+				</p>
+
+			</div><!--form-horizontal-->
+
+		</form>
+
+
+
+	</section><!--block-box-->
+                                            </div><!--container-->
+                                            
+                                   </div><!--modal-body-->
+                        </div>
+                </div>
+ </div>

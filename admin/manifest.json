@@ -1,0 +1,71 @@
+{
+    
+    "appName": "Zinkia Youtube Administrator",
+    "appVersion":"0.alpha",
+    
+    "clientId": "croupier-web-admin",
+    "jsDir": "assets/js", 
+    "definesFile": "define.js",
+    "widgetsTemplatesFile": "assets/html/widgets.html",
+    "debug":false,
+    "table": {
+        "animation": false,
+        "defaultPageSize": 30,
+        "disableHeaderUpdate" : true
+    },
+    
+    "animations" : false,
+    "initialPanel" :"panel_monitor",
+    
+    "API": {
+        
+        "fetchReports":"youtube/reports.php",
+        "loadReports":"youtube/loadDB.php",
+        "csvToDrive":"youtube/drive.php"
+        
+        
+    },
+    
+    "classes" : [
+            "znkCroupierAdministrator/general.js",
+            "znkCroupierAdministrator/common.js",
+            "znkCroupierAdministrator/user.js",
+            "znkCroupierAdministrator/html_code.js",
+            "znkCroupierAdministrator/tabs.js",
+            
+            "znkCroupierAdministrator/models/Abstract.js",          
+            "znkCroupierAdministrator/models/APISet.js",          
+            "znkCroupierAdministrator/models/Video.js",          
+            "znkCroupierAdministrator/models/Task.js",          
+            "znkCroupierAdministrator/models/Comment.js", 
+            
+            
+            "widgets/ChosenEditable.js",
+            
+            "widgets/Widget.js",
+            "widgets/Table.js",
+            
+            "widgets/VideosTable.js",
+             "widgets/TasksTable.js",
+             
+             "widgets/CommentsViewer.js",
+              "widgets/CommentsTable.js",
+           
+            
+            "widgets/SelectBox.js",
+           
+                       
+            "layouts/Layout.js",
+            "layouts/widgets/LayoutManager.js",
+            "layouts/widgets/LayoutsTable.js",
+            "layouts/widgets/LayoutsDialog.js",
+            
+            "panels/panel.js",
+            "panels/button_open_new_tab.js",
+            "panels/panel_monitor.js",
+            "panels/panel_header.js",
+            "panels/panel_user_list.js"
+            
+    ]
+    
+}

@@ -1,0 +1,13 @@
+[pack]
+	buildbitmaps = false
+[core]
+	repositoryformatversion = 0
+	filemode = false
+	logallrefupdates = true
+	bare = false
+[remote "origin"]
+	url = https://github.com/google/google-api-php-client.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "v1-master"]
+	remote = origin
+	merge = refs/heads/v1-master

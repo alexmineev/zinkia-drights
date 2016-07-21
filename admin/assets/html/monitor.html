@@ -1,0 +1,123 @@
+<!-- <div class="container"> -->
+<!--	<div class="section-tabs clearfix">
+		<ul class="nav nav-tabs">
+			<li class="dropdown active">
+				<a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">Monitor <span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					<li><a href="#">Go to Monitor</a></li>
+					<li class="divider"></li>
+					<li><a href="#">Rename</a></li>
+					<li><a href="#">Close tab</a></li>
+				</ul>
+			</li>
+		</ul>
+
+	</div>-->
+	<!--section-tabs-->
+        
+	<section class="block-box block-box-tabbed">
+              <!-- <div id="$table_nodes$_container">    -->
+		<header class="clearfix" id="table-videos_headers">
+
+			<span class="tit pull-left" id="">Videos</span>
+			<div class="btn-actions pull-left" id="table-videos_actions">
+				<!--<a href="#" title=""><span class="glyphicon glyphicon-list"></span></a>
+				<span class="disabled"><span class="glyphicon glyphicon-list"></span></span>
+				<a href="#" title=""><span class="glyphicon glyphicon-pause"></span></a>
+				<a href="#" title=""><span class="glyphicon glyphicon-play"></span></a>
+				<a href="#" title=""><span class="glyphicon glyphicon-remove"></span></a>
+				<a href="#" title=""><span class="glyphicon glyphicon-refresh"></span></a>
+				<a href="#" title=""><span class="glyphicon glyphicon-play-circle"></span></a>
+				<a href="#" title=""><span class="glyphicon glyphicon-off"></span></a>
+				<a href="#" title=""><span class="glyphicon glyphicon-repeat"></span></a>-->
+			</div><!--btn-actions-->
+
+			<div class="pull-right">
+				<span class="label label-success mhs">
+                                    <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> <span id="table-videos_n">N</span> videos<!--, <span id="table-videos_wn">N</span> working-->
+				</span>
+				<a href="#" class="mhs"><span class="glyphicon glyphicon-filter"></span></a>
+				<a href="#" class="mhs max-min-trigger" data-toggle="collapse" data-target="#table-videos" aria-expanded="true" aria-controls="table-videos"><span class="glyphicon glyphicon-minus"></span></a>
+			</div><!-- pull-right-->
+
+		</header>
+		<div class="table-responsive collapse in" id="table-videos">
+			<table class="table table-bordered table-light-blue" id="table-videos_dt">
+				<thead>
+					<tr>
+                                            
+						<th><input type="checkbox" id="table-videos_checkall"/></th>
+                                                <th></th>
+                                                <th>Título</th>
+						<th>Canal</th>
+						<th>Views</th>
+						<th>Earnings</th>
+						
+						
+					</tr>
+				</thead>
+				<tbody>
+					
+				</tbody>
+                              
+			</table>
+		</div><!--collapse-->
+              <!-- </div> -->
+	</section><!--block-box-->
+        
+
+        
+<div id="uploader" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content" style="width:585px">
+        <div class="modal-body">
+                <div id="uploader_alert" class="alert alert-info alert-dismissible fade in" role="alert">
+                    
+                    <!--<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">×</span></button> -->
+                    
+                    <h4>Selecciona año y trimestre</h4> 
+                    <hr style="border: 1px solid #ccc" />        
+                                <table class="table-responsive">
+                                    <tr>
+                                        
+                                        <td>
+                                            <label class="control-label" for="report-year">Año:</label>
+                                        </td> 
+                                        <td>
+                                            <select id="repYear"/> 
+                                            </select>
+
+                                        </td>
+                                </tr>
+                                <tr>
+                                        
+                                        <td>
+                                            <label class="control-label" for="report-trimester">Trimestre:</label>
+                                        </td> 
+                                        <td>
+                                            <select id="report-trimester"/>
+                                                <option value="1">Primer trimestre (Enero-Marzo)</option>
+                                                <option value="2">Segundo trimestre (Abril-Junio)</option>
+                                                <option value="3">Tercer trimestre (Julio-Septiembre)</option>
+                                                <option value="4">Cuarto trimestre (Octubre-Diciembre)</option>
+                                            </select>
+
+                                        </td>
+                                </tr>
+                               
+                                </table>
+                                
+                    <br />
+                    
+                    <div style="margin-left:87px" class="btn-group">
+                        <!--<button type="button" class="btn btn-info" style="margin-left:75px" aria-label="Apply" id="{id}_okBtn">Accept</button>-->
+                        <button type="button" class="btn btn-danger" data-dismiss="modal" aria-label="Close">Cancel</button>
+                    </div> 
+                    
+                </div>
+        </div> 
+    </div>
+  </div>
+ </div>        
+
