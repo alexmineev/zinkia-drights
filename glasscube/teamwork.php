@@ -1,4 +1,4 @@
-<?php 
+    ¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨<?php 
 
 
 /* 
@@ -179,7 +179,7 @@ mfpHolderId:commentFPWHolder1466411752481
         $this->client->resetParameters();
         $this->client->setUri(self::BASE_URL);
         
-        $this->client->setParameterGet("action","invoke.comments.ajaxAddOrEditComment()");
+        $this->client->setParameterGet("action","invoke.comments.ajaxAddOrEditComment()$sq WSW");
         $this->client->setParameterPost("mode","new");
         $this->client->setParameterPost("projectId",$projectId);
         $this->client->setParameterPost("objectType","task");
@@ -241,10 +241,10 @@ taskRepeatEnd:noEndDate
  * 
  * 
 */
-    public function addTask($taskListId,$projectId,$name,$startDate,$description,$author)
+    public function addTask($taskListId,$projectId,$name,$startDate,$description,$author,$group)
     {
-        
-         $description = utf8_encode("Author: ".$author."\n\n".$description);
+         
+         $description = utf8_encode("Taskgroup: $group\n\nAuthor: ".$author."\n\n".$description);
         
          $this->client->resetParameters();
          $this->client->setUri(self::BASE_URL.self::POST_SCRIPT);
@@ -252,7 +252,7 @@ taskRepeatEnd:noEndDate
          $this->client->setParameterPost("taskGrantAccessTo","-1");
          $this->client->setParameterPost("action","addTask");
          $this->client->setParameterPost("taskListId",$taskListId);
-         $this->client->setParameterPost("tagsJSON",'[{"id":null,"color":"#2f8de4","name":"glass"}]');
+         $this->client->setParameterPost("tagsJSON",'[{"id":null,"color":"#2f8de4","name":"GlassCubes"}]');
          $this->client->setParameterPost("uniqueId","0");
          $this->client->setParameterPost("redirectAfterEdit","NO");
          $this->client->setParameterPost("taskId","0");
@@ -299,14 +299,14 @@ $user="UDigitalRYout";
 $password="DR160602znk";
 $dbname="DigitalRYout";
 
-$opts = getopt("p:w:");
+$opts = getopt("p:w:t:");
 //var_dump($opts);
 $projectId =  isset($opts['p']) ?  $opts['p'] : "259211";
 $workspace = isset($opts['w']) ?  $opts['w'] : "SEND";
 
 
 echo "********* TeamWork tasks & comments importer v.1.Alpha *********\n";
-echo "---------------------------------------------------------------- \n\n";
+echo "----------------------------------------------------------------\n\n";
 
 
 $tw = new TeamWork("eneko.elbira@gmail.com","glasscubes",$projectId);
@@ -326,7 +326,7 @@ echo ">>>> Done.\n";
 
 
 echo  ">>>>> Importing workspace ".$workspace."\n";
-echo  ">>>>> Fetching task groups from the DB. \n";
+/*echo  ">>>>> Fetching task groups from the DB. \n";
 
 $sql= "SELECT * FROM tasks WHERE workspace = '$workspace' ORDER BY task_group";
 
@@ -343,15 +343,25 @@ foreach ($ds as $row) {
 }
 
 
-echo ">>>> sorting tasks & groups.....\n "; 
+echo ">>>> sorting tasks & groups.....\n "; */
 
-foreach ($groups as $group => $tasks) {
-    echo $group.": ".count($tasks)."\n";
+$sql= "SELECT * FROM tasks WHERE workspace = '$workspace'";
+
+$ds= $con->query($sql);
+echo "Got ".$ds->num_rows." tasks to import...";
+
+
     
-    $groupId=$tw->addTaskList($group,$projectId); 
     
-   foreach ($tasks as $task)  {
-     $taskId = $tw->addTask($groupId,$projectId,$task['title'],$task['created'],$task['description'],$task['author']);
+    //$groupId=$tw->addTaskList($group,$projectId); 
+   //$groupId = $tw->addTaskList("Import_GlassCubes",$projectId);     
+
+    
+
+   foreach ($ds as $task)  {
+       
+     $groupId = $opts['t'];
+     $taskId = $tw->addTask($groupId,$projectId,$task['title'],$task['created'],$task['description'],$task['author'],$task['task_group']);
      echo $taskId." | ".$task['title']." imported\n";  
      
      
@@ -365,9 +375,6 @@ foreach ($groups as $group => $tasks) {
          echo ">>>> No comments for this task.\n";
      }
      
-     
-     
-   } 
     
 }
 

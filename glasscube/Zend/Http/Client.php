@@ -231,7 +231,6 @@ class Zend_Http_Client
      * @var Zend_Http_CookieJar
      */
     protected $cookiejar = null;
-
     /**
      * The last HTTP request sent by the client, as string
      *

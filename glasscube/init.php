@@ -37,8 +37,8 @@ if (count($_FILES)>0 && isset($_FILES['csv'])) {
             $result-> id = $video[0];
             $result -> title = $video[3];
             $result -> channel = $video[7];
-            $result -> views = $video[11];
-            $result -> earnings = $video[19];
+            $result -> views = $video[17];
+            $result -> earnings = $video[31];
             
             $results[] = $result;
         }

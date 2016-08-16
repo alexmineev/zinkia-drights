@@ -29,6 +29,9 @@ foreach ($res as $row)
 header("Content-type: application/json");
 
 
+
+
+
  echo @Zend_Json_Encoder::encode($tasks);
 
 //var_dump($tasks);

@@ -1,19 +1,37 @@
 <?php
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
  * Description of Videos
  *
  * @author alexey.mineev
  */
 class Videos {
-    public static function fromCSVReport(String $reportFile) {
-        
+    private $videos = array();
+    private $year = null;
+    private $trimester = null;
+    
+    protected $_query = "";
+    protected $_groupBy = "id";
+    
+    public function __construct(mysqli $db) {
+        $this->db = $db;
     }
+    
+    public function setVideosQuery($year,$trimester) {
+       $this->_query = "SELECT id,title,channel,SUM(views) as views,SUM(earnings) as earnings FROM videos WHERE year = $year AND trimester = $trimester";
+    }
+    
+    public function load($mode) {
+        
+       $res = $this->db->query($this->_query);
+        
+       foreach ($res as $video) {
+           $this->videos[] = $video;
+       }  
+       
+      return count($res)>0;
+    }
+    
+    
     
 }
