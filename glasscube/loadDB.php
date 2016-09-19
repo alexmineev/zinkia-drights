@@ -1,24 +1,28 @@
 <?php 
 
-
+set_time_limit(0);
 require_once('Zend/Json/Encoder.php');
+require_once 'DB.inc.php';
 
-function loadVideos($year,$trimester) {
-    
- $host="192.168.1.80";
-$port=3306;
-$socket="";
-$user="UDigitalRYout";
-$password="DR160602znk";
-$dbname="DigitalRYout";   
-    
- $con = new mysqli($host, $user, $password, $dbname, $port, $socket)
-	or die ('Could not connect to the database server' . mysqli_connect_error());
+if (!isset($_GET['channels'])) $_GET['channels'] = null;
+function loadVideos($year,$trimester,$cms) {
+$con = getDB();
  
  $year = $con->escape_string($year);
  $trimester = $con->escape_string($trimester);
- $videos = $con->query("SELECT id,title,channel,serie,SUM(views) as views,SUM(earnings) as earnings FROM videos WHERE year = $year AND trimester = $trimester GROUP BY id"); 
+ $cms = $con->escape_string($cms);
+ if (is_null($_GET['channels']) || !isset($_GET['channels'])) {
+    $videos = $con->query("SELECT id,title,channel,serie,views,earnings FROM videos WHERE year = $year AND trimester = $trimester AND cms_id = '$cms'"); 
+ } else {
+     
+    $chList = array();
+    $channels = json_decode($_GET['channels']);
+    foreach ($channels as $chId)
+        $chList[] = "'$chId'";
     
+    $chList = implode(",",$chList);
+    $videos = $con->query("SELECT id,title,channel,serie,views,earnings FROM videos WHERE year = $year AND trimester = $trimester AND cms_id = '$cms' AND channel_id IN ($chList)");  
+ } 
  $results = array();
  foreach ($videos as $video) {
      
@@ -34,9 +38,9 @@ $dbname="DigitalRYout";
  }
  
  return $results;
-}
+}                                                                                                                                                                                                                                                               
 
 $res = new stdClass();
-$res -> videos  = loadVideos($_GET['year'],$_GET['trimester']);
+$res -> videos  = loadVideos($_GET['year'],$_GET['trimester'],$_GET['cms']);
 
 echo @Zend_Json_Encoder::encode($res);
