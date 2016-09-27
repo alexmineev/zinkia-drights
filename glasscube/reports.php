@@ -16,11 +16,48 @@ header("Connection: keep-alive");
 
 $inputs = getopt("y:t:c:");
 //var_dump($inputs);
-if (count($inputs)<3)
+//var_dump($inputs);
+if (count($inputs)==0)
 {
     echo "Usage: php reports.php -y year -t trimester -c CMS_ID\n";
-    echo "       php reports.php <no parameters>: automatic mode\n";
+    echo "       php reports.php -c CMS_ID\n";
     exit();
+} else if (count($inputs)==1) {
+  $inputs["y"] = date("Y");
+  switch (date("m")) {
+      case "01":
+      case "02":
+      case "03":
+        $inputs['t'] = 1;  
+          
+      break;
+  
+      case "04":
+      case "05":
+      case "06":
+        $inputs['t'] = 2;  
+          
+      break;
+  
+      case "07":
+      case "08":
+      case "09":
+          $inputs['t'] = 3;
+          
+      break;
+  
+      case "10":
+      case "11":
+      case "12":
+          $inputs['t'] = 4;
+          
+      break;
+  }
+}
+
+if (!isset($inputs["y"]) || !isset($inputs["t"]) || !isset($inputs["c"]))
+{
+    die("[ERROR]: Bad parameters. See usage.");
 }
 
 $year = $inputs["y"];
@@ -43,12 +80,16 @@ $oldformat = $year<2016;
 $USERNAME = 'alexey.mineev@zinkia.com'; 
 $PASSWORD = 'am071215';
 
-$COOKIEFILE = '.ht_cookiejar';
+
 $CONTENT_OWNER = $cms;//"-3HHK8UB89SXTeTPkdEsZQ";//"3sk-VT2PP3aGHHSPGjBd9A";//"-3HHK8UB89SXTeTPkdEsZQ";//"0YSVm7yx3KFfY2JfQ2_1CA";
 $SERIES_FILE_LINK = 'https://docs.google.com/spreadsheets/export?id=1SIs4_9M0Ghn63tZEILoquree5RJHdURCC88e1XQf8WM&exportFormat=csv';
 
-
 $ch = curl_init();
+
+function GoogleLogin($ch,$username,$password) {
+    
+$COOKIEFILE = '.ht_cookiejar';
+
 curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 30);
 curl_setopt($ch, CURLOPT_USERAGENT, "Mozilla/4.0 (compatible; MSIE 6.0; Windows 5.1)");
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -71,8 +112,8 @@ echo "App.mainBox.setMsg(\"Fetching reports...\");";*/
 
 $formFields = getFormFields($data);
 
-$formFields['Email']  = $USERNAME;
-$formFields['Passwd'] = $PASSWORD;
+$formFields['Email']  = $username;
+$formFields['Passwd'] = $password;
 unset($formFields['PersistentCookie']);
 
 $post_string = '';
@@ -88,16 +129,11 @@ curl_setopt($ch, CURLOPT_POSTFIELDS, $post_string);
 
 $result = curl_exec($ch);
 echo "[INFO] Login OK.\n";
+}
+    
 
-/*if (strpos($result, '<title>Redirecting') === false) {
-    /*die("Login failed");
-    var_dump($result);
-} else {*/
+GoogleLogin($ch,$USERNAME,$PASSWORD);
 
-    /*curl_setopt($ch, CURLOPT_URL, 'https://www.youtube.com/dashboard?o='.$CONTENT_OWNER);
-    curl_setopt($ch, CURLOPT_POST, 0);
-    curl_setopt($ch, CURLOPT_POSTFIELDS, null);
-    curl_exec($ch);*/
 
     curl_setopt($ch, CURLOPT_URL, 'https://www.youtube.com/download_reports?action_ads_partner_revenue=1&o='.$CONTENT_OWNER);
     curl_setopt($ch, CURLOPT_POST, 0);
@@ -167,6 +203,8 @@ function toCSVFileName($link) {
 
 
 /* fetching report links */
+function getFilesList($result,$type,$year,$trimester) {
+    
 
 $query = new Zend_Dom_Query(Zend_Dom_Query::DOC_HTML,"utf8"); 
 $query->setDocumentHtml($result);
@@ -188,7 +226,11 @@ foreach ($result as $link) {
     }
     
 }
+return $files;
+}
 //var_dump($files);
+
+$files = getFilesList($result,$type,$year,$trimester);
 if (count($files) == 0)  {
     //echo "\nwindow.__abort = true;\nApp.errorMsg('YT Zinkia MCN','No se han encontrado informes para trimestre elegido.');\n";
     echo "[INFO] No reports found for given time period.\n";
@@ -221,13 +263,26 @@ foreach ($channels as $channel) {
     $chIds[] = $channel['id'];
 }
 $con->query("DELETE FROM videos WHERE year='{$year}' AND trimester= '{$trimester}' AND cms_id = '$CONTENT_OWNER'");
-
+$con->query("DELETE FROM videos_tmp WHERE year='{$year}' AND trimester= '{$trimester}' AND cms_id = '$CONTENT_OWNER'");
 curl_setopt($ch, CURLOPT_URL,$SERIES_FILE_LINK);
 $series = explode("\r\n",curl_exec($ch));
 $videos=0;
-foreach ($files as $file) {
+
+$numFiles = count($files);
+
+for ($c=0;$c<count($files);$c++) {
     
     //curl_setopt($ch, CURLOPT_URL,$file);
+        GoogleLogin($ch,$USERNAME,$PASSWORD);
+        curl_setopt($ch, CURLOPT_URL, 'https://www.youtube.com/download_reports?action_ads_partner_revenue=1&o='.$CONTENT_OWNER);
+        curl_setopt($ch, CURLOPT_POST, 0);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, null);
+   // curl_setopt($ch,CURLOPT_HTTPGET, "action_ads_partner_revenue", "1")
+
+    $result = curl_exec($ch);
+    $uFiles=getFilesList($result,$type,$year,$trimester);
+    $file = $uFiles[$c];
+    
     $zipName = uniqid("zipreport_");
     file_put_contents("tmp/".$zipName,  file_get_contents($file));
    //die();
@@ -242,9 +297,15 @@ foreach ($files as $file) {
     /*$csvData = file_get_contents("tmp/".$fName);
     
     $csv[]=$csvData;*/
+    echo "[INFO]: Processing file $fName\n";
     $fp= fopen("tmp/".$fName,"r");
-    
+    $i=0;
     while (!feof($fp)) {
+    
+    if (!is_resource($fp)) {
+        echo "[ERROR] stream failed on entry: $i file $fName\n";
+        break;
+    }
     
     $cells = fgetcsv($fp);
     
@@ -304,6 +365,7 @@ foreach ($files as $file) {
     
     //$videos[] =$video;
     $videos++;
+    $i++;
 }
     
     fclose($fp); 
@@ -330,7 +392,7 @@ foreach ($videosIds as $vidId) {
     
     $con->query("UPDATE videos SET thumbnail='$thumbBase64' WHERE id = '$id'");
 }
-echo "[INFO] Done. ".$videosIds->num_rows." videos processed and inserted into DB.\n";
+echo "[INFO] Done. ".(is_array($videosIds)?count($videosIds):$videosIds->num_rows)." videos processed and inserted into DB.\n";
 echo "[INFO] Cleaning up temp data...\n";
 
 $con->query("DELETE FROM videos_tmp WHERE year='{$year}' AND trimester= '{$trimester}' AND cms_id = '$CONTENT_OWNER'");

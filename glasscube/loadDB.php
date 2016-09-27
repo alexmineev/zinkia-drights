@@ -12,7 +12,10 @@ $con = getDB();
  $trimester = $con->escape_string($trimester);
  $cms = $con->escape_string($cms);
  if (is_null($_GET['channels']) || !isset($_GET['channels'])) {
+     if ($trimester!=0)
     $videos = $con->query("SELECT id,title,channel,serie,views,earnings FROM videos WHERE year = $year AND trimester = $trimester AND cms_id = '$cms'"); 
+    else
+     $videos = $con->query("SELECT id,title,channel,serie,sum(views) as views,sum(earnings) as earnings FROM videos WHERE year = $year AND cms_id = '$cms' group by id");    
  } else {
      
     $chList = array();
@@ -21,7 +24,10 @@ $con = getDB();
         $chList[] = "'$chId'";
     
     $chList = implode(",",$chList);
+    if ($trimester!=0)
     $videos = $con->query("SELECT id,title,channel,serie,views,earnings FROM videos WHERE year = $year AND trimester = $trimester AND cms_id = '$cms' AND channel_id IN ($chList)");  
+    else 
+    $videos = $con->query("SELECT id,title,channel,serie,sum(views) as views,sum(earnings) as earnings FROM videos WHERE year = $year AND cms_id = '$cms' AND channel_id IN ($chList) group by id");      
  } 
  $results = array();
  foreach ($videos as $video) {

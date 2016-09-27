@@ -27,7 +27,10 @@ echo $json;
 function genCSVFile($db,$year,$trimester,$cms,$channels) {
     
     if (is_null($channels)) {
+       if ($trimester!=0) 
         $filterSQL =  "year = '$year' AND trimester = '$trimester' AND cms_id= '$cms' AND channel <> ''";
+       else 
+            $filterSQL =  "year = '$year' AND cms_id= '$cms' AND channel <> ''";
     } else {
          $chList = array();
          
@@ -35,13 +38,17 @@ function genCSVFile($db,$year,$trimester,$cms,$channels) {
              $chList[] = "'$chId'";
     
             $chList = implode(",",$chList); 
-            
+        if ($trimester!=0)    
         $filterSQL =  "year = '$year' AND trimester = '$trimester' AND cms_id= '$cms' AND channel <> '' AND channel_id IN ($chList)";
+        else
+        $filterSQL =  "year = '$year' AND cms_id= '$cms' AND channel <> '' AND channel_id IN ($chList)";    
     }
+  
+    if ($trimester!=0)
+      $res = $db->query("SELECT id,title,channel,serie, views, earnings,thumbnail FROM videos WHERE $filterSQL ORDER BY channel,serie");
+    else 
+      $res = $db->query("SELECT id,title,channel,serie, sum(views) as views, sum(earnings) as earnings,thumbnail FROM videos WHERE $filterSQL GROUP BY id ORDER BY channel,serie");
     
-    
-    
-    $res = $db->query("SELECT id,title,channel,serie, views, earnings,thumbnail FROM videos WHERE $filterSQL ORDER BY channel,serie");
     $channelTotals = $db->query("SELECT channel,SUM(views) as views,SUM(earnings) as earnings FROM videos WHERE $filterSQL GROUP BY channel");
     $seriesTotals = $db->query(
  "SELECT 
@@ -111,7 +118,7 @@ ORDER BY channel"
     $csvLines = array();
     foreach ($videos as $channel => $data)
     {
-        $csvLines[] = array("Thumbnail","Canal","Serie","Titulo","Views","Earnings");
+        $csvLines[] = array("Thumbnail","Canal","Serie","Titulo","Reproduciones","Ganancias");
             foreach ($data['videos'] as $video) {
                 $line = array();
                 $line[] = $video['thumbnail'];
@@ -130,8 +137,10 @@ ORDER BY channel"
     
     
     $csvLines[] =array("","","","","","");
+    if ($trimester!=0)
     $csvLines[] =array("","","","TOTAL POR TRIMESTRE",$summary['views'],round($summary['earnings'],2)." USD");
-    
+    else 
+    $csvLines[] =array("","","","TOTAL POR AÑO",$summary['views'],round($summary['earnings'],2)." USD");    
     
     foreach ($seriesTotals as $serie) {
         $rawSeries[] = array(
