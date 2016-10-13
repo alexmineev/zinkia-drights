@@ -16,7 +16,6 @@ php reports.php -y 2014 -t 3 -c "-3HHK8UB89SXTeTPkdEsZQ"
 php reports.php -y 2014 -t 4 -c "-3HHK8UB89SXTeTPkdEsZQ"
 php reports.php -y 2013 -t 4 -c "-3HHK8UB89SXTeTPkdEsZQ"
 
-
 echo "Processing Zinkia Entertainment from 2016 to 2010"
 
 php reports.php -y 2016 -t 1 -c "0YSVm7yx3KFfY2JfQ2_1CA"
@@ -35,16 +34,10 @@ php reports.php -y 2013 -t 1 -c "0YSVm7yx3KFfY2JfQ2_1CA"
 php reports.php -y 2013 -t 2 -c "0YSVm7yx3KFfY2JfQ2_1CA"
 php reports.php -y 2013 -t 3 -c "0YSVm7yx3KFfY2JfQ2_1CA"
 php reports.php -y 2013 -t 4 -c "0YSVm7yx3KFfY2JfQ2_1CA"
-php reports.php -y 2012 -t 1 -c "0YSVm7yx3KFfY2JfQ2_1CA"
-php reports.php -y 2012 -t 2 -c "0YSVm7yx3KFfY2JfQ2_1CA"
+#php reports.php -y 2012 -t 1 -c "0YSVm7yx3KFfY2JfQ2_1CA"
+#php reports.php -y 2012 -t 2 -c "0YSVm7yx3KFfY2JfQ2_1CA"
 php reports.php -y 2012 -t 3 -c "0YSVm7yx3KFfY2JfQ2_1CA"
 php reports.php -y 2012 -t 4 -c "0YSVm7yx3KFfY2JfQ2_1CA"
-php reports.php -y 2011 -t 1 -c "0YSVm7yx3KFfY2JfQ2_1CA"
-php reports.php -y 2011 -t 2 -c "0YSVm7yx3KFfY2JfQ2_1CA"
-php reports.php -y 2011 -t 3 -c "0YSVm7yx3KFfY2JfQ2_1CA"
-php reports.php -y 2011 -t 4 -c "0YSVm7yx3KFfY2JfQ2_1CA"
-php reports.php -y 2010 -t 3 -c "0YSVm7yx3KFfY2JfQ2_1CA"
-php reports.php -y 2010 -t 4 -c "0YSVm7yx3KFfY2JfQ2_1CA"
 
 echo "Processing Zinkia MCN"
 

@@ -14,6 +14,8 @@ header("Connection: keep-alive");
  *  
  * * * * * * */
 
+setlocale(LC_ALL, "es_ES.UTF-8");
+
 $inputs = getopt("y:t:c:");
 //var_dump($inputs);
 //var_dump($inputs);
@@ -248,13 +250,16 @@ $con = getDB();
 $channels= $con->query("SELECT * FROM channels WHERE cms_id = '$CONTENT_OWNER'");
 
 if ($oldformat) {
-   $videosData= $con->query("SELECT DISTINCT id,title,channel,channel_id FROM videos WHERE cms_id = '$CONTENT_OWNER'");
+   $videosData= $con->query("SELECT DISTINCT id,title,channel,channel_id,asset_id,episode,season FROM videos WHERE cms_id = '$CONTENT_OWNER'");
    
    foreach ($videosData as $item) {
        $vData[$item['id']] =     array(
            "title" => $item['title'],
            "channel" => $item['channel'],
-           "channel_id" => $item['channel_id']
+           "channel_id" => $item['channel_id'],
+           "asset_id" => $item['asset_id'],
+           "episode" => $item['episode'],
+           "season" => $item['season']
        );
    }
 }
@@ -267,7 +272,7 @@ $con->query("DELETE FROM videos_tmp WHERE year='{$year}' AND trimester= '{$trime
 curl_setopt($ch, CURLOPT_URL,$SERIES_FILE_LINK);
 $series = explode("\r\n",curl_exec($ch));
 $videos=0;
-
+$seriesAssets = $con->query("SELECT * FROM series");
 $numFiles = count($files);
 
 for ($c=0;$c<count($files);$c++) {
@@ -294,10 +299,9 @@ for ($c=0;$c<count($files);$c++) {
     
     
     $fName = toCSVFileName($file);
-    /*$csvData = file_get_contents("tmp/".$fName);
     
-    $csv[]=$csvData;*/
     echo "[INFO]: Processing file $fName\n";
+    
     $fp= fopen("tmp/".$fName,"r");
     $i=0;
     while (!feof($fp)) {
@@ -319,23 +323,27 @@ for ($c=0;$c<count($files);$c++) {
     
     $video = array(
         "id" => $cells[0],
-        "title" => utf8_decode($cells[3]),
-        "channel" => utf8_decode($cells[7]),
+        "title" => $cells[3],
+        "channel" => $cells[7],
         "views" => $cells[17],
         "earnings" => $cells[31]
     );
     $channel_id= $cells[8];
+    $asset_id = $cells[16];
+            
+    $season = "0";
+    $episode = "0";
     
     } else { // antes de 2016
         
-     // $videoData=$con->query("SELECT DISTINCT id,title,channel,channel_id FROM videos WHERE id='{$cells[0]}'");
-        
-     // list($id,$title,$channel,$channel_id) =  current($videoData);
-       if (!isset($vData[$cells[0]]))  continue;
+       if (!isset($vData[$cells[0]])) continue;
         
        $title = $vData[$cells[0]]['title']; 
        $channel = $vData[$cells[0]]['channel'];
        $channel_id = $vData[$cells[0]]['channel_id'];
+       $asset_id = $vData[$cells[0]]['asset_id'];
+       $season = $vData[$cells[0]]['season'];
+       $episode = $vData[$cells[0]]['episode'];
        //echo $channel."\n";
       if (!in_array($channel_id,$chIds)) continue;
       
@@ -349,27 +357,64 @@ for ($c=0;$c<count($files);$c++) {
         
     }
     
-
     
+    /* *
+     *  serie detection algorithytm begin 
+     */  
+     
+    $serie = $video['channel']; //defaults to channel name
     
-    $serie = $video['channel'];
-    foreach ($series as $s) {
+    //Trying to detect season and episode by common name patterns...
+    if (preg_match("#S([0-9]+)E([0-9]+)#i",$video['title'],$regs)>0) //Detects SxxEyy pattern
+    {
+        list($exp,$season,$episode) = $regs;
+        $season = (int) $season;
+        $episode = (int) $episode;
+    }      
+     
+    if (preg_match("#\s([1-9])x([0-9]+)\s#i",$video['title'],$regs)>0) //Detects NxMM pattern
+    {
+        list($exp,$season,$episode) = $regs;
+        $season = (int) $season;
+        $episode = (int) $episode;
+         
+    }
+            
+    //Detection by Asset Custom_ID
+    //TODO: Optimise to manual matching in array..
+     //Matching asset CUSTOM_ID
+     foreach ($seriesAssets as $asset)
+    {
+        if (substr($asset_id, 0,strlen($asset['id']))!=$asset['id']) continue;
+        
+        $season = $asset['season'];
+        $serie = $asset['name'];
+        if ($season>0 && !is_int($episode) && strlen($asset['pattern'])>0)  { //detecting episode by a pattern
+                if (preg_match($asset['pattern'],$asset_id,$regs)==1) {
+                //var_dump($regs);die();
+                $episode  = (int) $episode;    
+              }
+              else $episode = null;
+        }
+    }    
+    if ($serie == $video['channel']) {   //no match, try matching serie by keyword list
+    foreach ($series as $s) { //searching the match in a predefined series list
           if(strstr($cells[3],$s)) {
-              $serie = utf8_decode($s);
+              $serie = $s;
               break;
           }
-                   
-    }
-
-    $con->query("INSERT INTO videos_tmp (id,title,serie,channel,views,earnings,year,trimester,cms_id,channel_id) VALUES ('{$video['id']}','{$video['title']}','{$serie}','{$video['channel']}','{$video['views']}','{$video['earnings']}','{$year}','{$trimester}','$CONTENT_OWNER','$channel_id')");
+     }
+   } 
+    /* * 
+     * end
+     * */ 
+    $con->query("INSERT INTO videos_tmp (id,title,serie,channel,views,earnings,year,trimester,cms_id,channel_id,season,episode,asset_id) VALUES ('{$video['id']}','{$video['title']}','{$serie}','{$video['channel']}','{$video['views']}','{$video['earnings']}','{$year}','{$trimester}','$CONTENT_OWNER','$channel_id','$season','$episode','$asset_id')");
     
     //$videos[] =$video;
     $videos++;
     $i++;
 }
-    
     fclose($fp); 
-    
     unlink("tmp/".$fName);
     unlink("tmp/".$zipName);
     
@@ -377,10 +422,9 @@ for ($c=0;$c<count($files);$c++) {
 
 
 echo "[INFO] Done. ".$videos." videos data entries processed.\n";
-
 echo "[INFO] Calculating videos views & earnings.\n";
 
-$con->query("INSERT INTO videos SELECT id,title,channel,SUM(views) as views,SUM(earnings) as earnings,year,trimester,thumbnail,serie,cms_id,channel_id FROM videos_tmp WHERE year = $year AND trimester = $trimester AND cms_id='$CONTENT_OWNER' group by id");
+$con->query("INSERT INTO videos SELECT id,title,channel,SUM(views) as views,SUM(earnings) as earnings,year,trimester,thumbnail,serie,cms_id,channel_id,season,episode,asset_id FROM videos_tmp WHERE year = $year AND trimester = $trimester AND cms_id='$CONTENT_OWNER' group by id");
 //$con->close();
 echo "[INFO] Downloading thumbnail images and inserting them into DB.\n";
 $videosIds = $con->query("SELECT id FROM videos WHERE year = '$year' AND trimester = '$trimester' AND cms_id='$CONTENT_OWNER'");

@@ -26,11 +26,25 @@ echo $json;
 
 function genCSVFile($db,$year,$trimester,$cms,$channels) {
     
+    $serie = $db->escape_string($_REQUEST['serie']);
+ $title =$db->escape_string($_REQUEST['title']);
+ 
+ $filter="";
+ if (strlen($_REQUEST['serie'])>0)
+ {
+     $filter = "AND serie LIKE '%$serie%' "; 
+ }
+ 
+ if (strlen($_REQUEST['title'])>0)
+ {
+     $filter .= "AND title LIKE '%$title%' "; 
+ }
+    
     if (is_null($channels)) {
        if ($trimester!=0) 
-        $filterSQL =  "year = '$year' AND trimester = '$trimester' AND cms_id= '$cms' AND channel <> ''";
+        $filterSQL =  "year = '$year' AND trimester = '$trimester' AND cms_id= '$cms' AND channel <> '' $filter";
        else 
-            $filterSQL =  "year = '$year' AND cms_id= '$cms' AND channel <> ''";
+            $filterSQL =  "year = '$year' AND cms_id= '$cms' AND channel <> '' $filter";
     } else {
          $chList = array();
          
@@ -39,13 +53,13 @@ function genCSVFile($db,$year,$trimester,$cms,$channels) {
     
             $chList = implode(",",$chList); 
         if ($trimester!=0)    
-        $filterSQL =  "year = '$year' AND trimester = '$trimester' AND cms_id= '$cms' AND channel <> '' AND channel_id IN ($chList)";
+        $filterSQL =  "year = '$year' AND trimester = '$trimester' AND cms_id= '$cms' AND channel <> '' AND channel_id IN ($chList) $filter";
         else
-        $filterSQL =  "year = '$year' AND cms_id= '$cms' AND channel <> '' AND channel_id IN ($chList)";    
+        $filterSQL =  "year = '$year' AND cms_id= '$cms' AND channel <> '' AND channel_id IN ($chList) $filter";    
     }
   
     if ($trimester!=0)
-      $res = $db->query("SELECT id,title,channel,serie, views, earnings,thumbnail FROM videos WHERE $filterSQL ORDER BY channel,serie");
+      $res = $db->query("SELECT id,title,channel,serie, views, earnings,thumbnail FROM videos WHERE $filterSQL GROUP BY id ORDER BY channel,serie");
     else 
       $res = $db->query("SELECT id,title,channel,serie, sum(views) as views, sum(earnings) as earnings,thumbnail FROM videos WHERE $filterSQL GROUP BY id ORDER BY channel,serie");
     
@@ -66,7 +80,7 @@ ORDER BY channel"
             );
           
     
-    $totals = $db->query("SELECT SUM(views) as views, SUM(earnings) as earnings FROM videos WHERE $filterSQL ");
+    $totals = $db->query("SELECT SUM(views) as views, SUM(earnings) as earnings FROM videos WHERE $filterSQL");
     
     $videos = array();
     foreach ($res as $video) {
@@ -84,9 +98,9 @@ ORDER BY channel"
             array(
                 
                         "id" => $video['id'],
-                        "title" => utf8_encode($video['title']),
-                        "channel" => utf8_encode($video['channel']),
-                        "serie" => utf8_encode($video['serie']),
+                        "title" => $video['title'],
+                        "channel" => $video['channel'],
+                        "serie" => $video['serie'],
                         "views" => $video['views'],
                         "earnings" => $video['earnings']
             );
@@ -103,7 +117,7 @@ ORDER BY channel"
                                 "earnings" => $channel['earnings'],
                             );
         $channelsRaw[] = array(
-            "channel" =>  utf8_encode($channel['channel']),
+            "channel" =>  $channel['channel'],
             "views" =>  $channel['views']
         );
         
@@ -122,9 +136,9 @@ ORDER BY channel"
             foreach ($data['videos'] as $video) {
                 $line = array();
                 $line[] = $video['thumbnail'];
-                $line[] = utf8_encode($video['channel']);
-                $line[] = utf8_encode($video['serie']);
-                $line[] = utf8_encode($video['title']);
+                $line[] = $video['channel'];
+                $line[] = $video['serie'];
+                $line[] = $video['title'];
                 $line[] = $video['views'];
                 $line[] = round($video['earnings'],2).' USD';
                 
@@ -144,8 +158,8 @@ ORDER BY channel"
     
     foreach ($seriesTotals as $serie) {
         $rawSeries[] = array(
-            "channel" => utf8_encode($serie['channel']),
-            "serie" => utf8_encode($serie['serie']),
+            "channel" => $serie['channel'],
+            "serie" => $serie['serie'],
             "views" =>  $serie['views']
          );
     }
