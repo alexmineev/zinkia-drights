@@ -59,9 +59,9 @@ function genCSVFile($db,$year,$trimester,$cms,$channels) {
     }
   
     if ($trimester!=0)
-      $res = $db->query("SELECT id,title,channel,serie, views, earnings,thumbnail FROM videos WHERE $filterSQL GROUP BY id ORDER BY channel,serie");
+      $res = $db->query("SELECT id,title,channel,serie, season,episode,views, earnings,thumbnail FROM videos WHERE $filterSQL ORDER BY channel,serie");
     else 
-      $res = $db->query("SELECT id,title,channel,serie, sum(views) as views, sum(earnings) as earnings,thumbnail FROM videos WHERE $filterSQL GROUP BY id ORDER BY channel,serie");
+      $res = $db->query("SELECT id,title,channel,serie,season,episode, sum(views) as views, sum(earnings) as earnings,thumbnail FROM videos WHERE $filterSQL GROUP BY id ORDER BY channel,serie");
     
     $channelTotals = $db->query("SELECT channel,SUM(views) as views,SUM(earnings) as earnings FROM videos WHERE $filterSQL GROUP BY channel");
     $seriesTotals = $db->query(
@@ -91,6 +91,8 @@ ORDER BY channel"
                         "title" => $video['title'],
                         "channel" => $video['channel'],
                         "serie" => $video['serie'],
+                        "season" => $video['season'],
+                        "episode" => $video['episode'],
                         "views" => $video['views'],
                         "earnings" => $video['earnings']
                    ); 
@@ -132,13 +134,14 @@ ORDER BY channel"
     $csvLines = array();
     foreach ($videos as $channel => $data)
     {
-        $csvLines[] = array("Thumbnail","Canal","Serie","Titulo","Reproduciones","Ganancias");
+        $csvLines[] = array("Thumbnail","Canal","Serie","Titulo","Temporada/Episodio","Reproduciones","Ganancias");
             foreach ($data['videos'] as $video) {
                 $line = array();
                 $line[] = $video['thumbnail'];
                 $line[] = $video['channel'];
                 $line[] = $video['serie'];
                 $line[] = $video['title'];
+                $line[] = ($video['season']>0 ? $video['season'] : "---") . "x" . ($video['episode']>0 ? $video['episode'] : "---");
                 $line[] = $video['views'];
                 $line[] = round($video['earnings'],2).' USD';
                 

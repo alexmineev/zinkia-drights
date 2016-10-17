@@ -6,8 +6,9 @@ function doPost(req) {
     
     DriveApp.removeFile(files.next());
   }
-  
-  var dataJson = req.parameters.data;
+   
+   var dataJson = req.parameters.data;
+ // return ContentService.createTextOutput(dataJson).downloadAsFile("data2.txt");
   var json = JSON.parse(dataJson);
   
   
@@ -32,8 +33,8 @@ function createReport(fname,data) {
     row[0]="";
     totSheet.appendRow(row); 
     if (thumb !== "Thumbnail" && thumb.length>10) {
-      totSheet.insertImage("data:image/jpeg;base64,"+thumb, 1, totSheet.getLastRow());
-      totSheet.setRowHeight(totSheet.getLastRow(), 90);
+     // totSheet.insertImage("data:image/jpeg;base64,"+thumb, 1, totSheet.getLastRow());
+      //totSheet.setRowHeight(totSheet.getLastRow(), 90);
     }
     
     if (row[3] && row[3].indexOf("TOTAL")!==-1) {
@@ -44,6 +45,7 @@ function createReport(fname,data) {
       totSheet.getRange(totSheet.getLastRow(), 4).setBorder(true, false, false, false, true, true, "black", null).setBackground("grey").setFontWeight("bold");
       totSheet.getRange(totSheet.getLastRow(), 5).setBorder(true, false, false, false, true, true, "black", null).setBackground("grey").setFontWeight("bold");
       totSheet.getRange(totSheet.getLastRow(), 6).setBorder(true, false, false, false, true, true, "black", null).setBackground("grey").setFontWeight("bold");
+      totSheet.getRange(totSheet.getLastRow(), 7).setBorder(true, false, false, false, true, true, "black", null).setBackground("grey").setFontWeight("bold");
       totSheet.setRowHeight(totSheet.getLastRow(), 50);
     }
     
@@ -53,6 +55,7 @@ function createReport(fname,data) {
       totSheet.getRange(totSheet.getLastRow(), 4).setFontWeight("bold").setHorizontalAlignment('center').setFontSize(14);
       totSheet.getRange(totSheet.getLastRow(), 5).setFontWeight("bold").setHorizontalAlignment('center').setFontSize(14);
       totSheet.getRange(totSheet.getLastRow(), 6).setFontWeight("bold").setHorizontalAlignment('center').setFontSize(14);
+      totSheet.getRange(totSheet.getLastRow(), 7).setFontWeight("bold").setHorizontalAlignment('center').setFontSize(14);
     }
   });
  
@@ -63,6 +66,8 @@ function createReport(fname,data) {
   totSheet.setColumnWidth(2, 270);
   totSheet.setColumnWidth(3, 340);
   totSheet.setColumnWidth(4, 340);
+  totSheet.setColumnWidth(5, 240);
+  totSheet.setColumnWidth(6, 200);
   
   var data=JSON.parse(Utilities.newBlob(Utilities.base64Decode(data[data.length-1][1],Utilities.Charset.UTF_8)).getDataAsString())
   
@@ -93,7 +98,7 @@ function genChannelRevenue(ss,dataSource,channel) {
   var rangeA=sheet.getRange("A1:A"+videos.length);  
   var rangeB=sheet.getRange("B1:B"+videos.length); 
   
-  var rangeC=sheet.getRange("D1:C"+series.length);
+  var rangeC=sheet.getRange("D1:D"+series.length);
   var rangeD=sheet.getRange("E1:D"+series.length); 
   
   
@@ -185,9 +190,9 @@ var chart2 = sheet.newChart()
      .addRange(rangeD)
      .setPosition(3, 12, 0, 0)
      .asBarChart()
-     .setXAxisTitle("Vistas")
+     .setXAxisTitle("Reproduciones")
      .setYAxisTitle("Serie")     
-     .setTitle("Vistas de cada serie")
+     .setTitle("Reproduciones de cada serie")
      //.setColors(chColors)
      .build();
   
@@ -301,9 +306,9 @@ var chart2 = sheet.newChart()
      .addRange(rangeD)
      .setPosition(3, 12, 0, 0)
      .asBarChart()
-     .setXAxisTitle("Vistas")
+     .setXAxisTitle("Reproduciones")
      .setYAxisTitle("Canal")     
-     .setTitle("Vistas de cada canal")
+     .setTitle("Reproduciones de cada canal")
      //.setColors(chColors)
      .build();
   
@@ -330,7 +335,7 @@ function hslToRgb(h, s, l) {
     if(s == 0){
         r = g = b = l; // achromatic
     }else{
-        var hue2rgb = function hue2rgb(p, q, t){
+        var hue2rgb = function hue2rgb(p, q, t) {
             if(t < 0) t += 1;
             if(t > 1) t -= 1;
             if(t < 1/6) return p + (q - p) * 6 * t;
