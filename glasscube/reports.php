@@ -1,12 +1,26 @@
 <?php
+/**
+ * YouTube Videos Reports Importer CLI script (V1.4)
+ *  
+ * Usage: php reports.php -y year -t trimester -c CMS_ID
+ *        php reports.php -c CMS_ID
+ *   
+ *  @uses Google Google account library
+ *  @uses Zend_Dom_Query HTML parser helper
+ * 
+ *  @author alexey.mineev <alexey.mineev@zinkia.com>
+ */
 
 require_once 'DB.inc.php';
+require_once 'libs/Google.php';
 require_once 'Zend/Dom/Query.php';
+
+include_once 'libs/config.inc.php';
 
 set_time_limit(0);
 
-header("Content-type: text/javascript");
-header("Connection: keep-alive");
+/*header("Content-type: text/javascript");
+header("Connection: keep-alive");*/
 
 
 /* * * * * * *
@@ -66,6 +80,8 @@ $year = $inputs["y"];
 $trimester = $inputs["t"];
 $cms = $inputs["c"];
 
+$benchmark_s = time();
+
 echo "[INFO] Launching importer for year: $year; trimester: $trimester; CMS_ID: $cms\n\n";
 
 if (!is_numeric($year) || !is_numeric($trimester) || !isset($cms)) {
@@ -87,54 +103,12 @@ $CONTENT_OWNER = $cms;//"-3HHK8UB89SXTeTPkdEsZQ";//"3sk-VT2PP3aGHHSPGjBd9A";//"-
 $SERIES_FILE_LINK = 'https://docs.google.com/spreadsheets/export?id=1SIs4_9M0Ghn63tZEILoquree5RJHdURCC88e1XQf8WM&exportFormat=csv';
 
 $ch = curl_init();
-
-function GoogleLogin($ch,$username,$password) {
-    
-$COOKIEFILE = '.ht_cookiejar';
-
-curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 30);
-curl_setopt($ch, CURLOPT_USERAGENT, "Mozilla/4.0 (compatible; MSIE 6.0; Windows 5.1)");
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-curl_setopt($ch, CURLOPT_COOKIEJAR, $COOKIEFILE);
-curl_setopt($ch, CURLOPT_COOKIEFILE, $COOKIEFILE);
-curl_setopt($ch, CURLOPT_HEADER, 0);  
-curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
-curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 120);
-curl_setopt($ch, CURLOPT_TIMEOUT, 120);
-
-curl_setopt($ch, CURLOPT_URL, 'https://accounts.google.com/ServiceLogin?hl=en&');
-
-echo "[INFO] Logging into Google Account\n";
-
-$data = curl_exec($ch);
-/*echo "App.mainBox.progress(33);\n";
-echo "App.mainBox.setMsg(\"Fetching reports...\");";*/
-
-$formFields = getFormFields($data);
-
-$formFields['Email']  = $username;
-$formFields['Passwd'] = $password;
-unset($formFields['PersistentCookie']);
-
-$post_string = '';
-foreach($formFields as $key => $value) {
-    $post_string .= $key . '=' . urlencode($value) . '&';
-}
-
-$post_string = substr($post_string, 0, -1);
-
-curl_setopt($ch, CURLOPT_URL, 'https://accounts.google.com/ServiceLoginAuth');
-curl_setopt($ch, CURLOPT_POST, 1);
-curl_setopt($ch, CURLOPT_POSTFIELDS, $post_string);
-
-$result = curl_exec($ch);
-echo "[INFO] Login OK.\n";
-}
     
 
-GoogleLogin($ch,$USERNAME,$PASSWORD);
+      $g = new Google($ch);
+      echo "[INFO] Logging into Google Account...\n";
+      $g->login(GOOGLE_USER,GOOGLE_PASSWORD);
+      echo "[INFO] Login OK.\n";
 
 
     curl_setopt($ch, CURLOPT_URL, 'https://www.youtube.com/download_reports?action_ads_partner_revenue=1&o='.$CONTENT_OWNER);
@@ -144,45 +118,7 @@ GoogleLogin($ch,$USERNAME,$PASSWORD);
 
   $result = curl_exec($ch);
 
-//echo "App.mainBox.progress(100); App.mainBox.done();\n";    
-//}
 
-function getFormFields($data)
-{
-    if (preg_match('/(<form.*?id=.?gaia_loginform.*?<\/form>)/is', $data, $matches)) {
-        $inputs = getInputs($matches[1]);
-
-        return $inputs;
-    } else {
-        die('Error: Login form not found.');
-    }
-}
-
-function getInputs($form)
-{
-    $inputs = array();
-
-    $elements = preg_match_all('/(<input[^>]+>)/is', $form, $matches);
-
-    if ($elements > 0) {
-        for($i = 0; $i < $elements; $i++) {
-            $el = preg_replace('/\s{2,}/', ' ', $matches[1][$i]);
-
-            if (preg_match('/name=(?:["\'])?([^"\'\s]*)/i', $el, $name)) {
-                $name  = $name[1];
-                $value = '';
-
-                if (preg_match('/value=(?:["\'])?([^"\'\s]*)/i', $el, $value)) {
-                    $value = $value[1];
-                }
-
-                $inputs[$name] = $value;
-            }
-        }
-    }
-
-    return $inputs;
-}
 
 function isInTrimester($linkYear,$linkMonth,$year,$trimester) {
     
@@ -234,7 +170,6 @@ return $files;
 
 $files = getFilesList($result,$type,$year,$trimester);
 if (count($files) == 0)  {
-    //echo "\nwindow.__abort = true;\nApp.errorMsg('YT Zinkia MCN','No se han encontrado informes para trimestre elegido.');\n";
     echo "[INFO] No reports found for given time period.\n";
     exit(0);
 } else {
@@ -269,7 +204,7 @@ foreach ($channels as $channel) {
 }
 $con->query("DELETE FROM videos WHERE year='{$year}' AND trimester= '{$trimester}' AND cms_id = '$CONTENT_OWNER'");
 $con->query("DELETE FROM videos_tmp WHERE year='{$year}' AND trimester= '{$trimester}' AND cms_id = '$CONTENT_OWNER'");
-curl_setopt($ch, CURLOPT_URL,$SERIES_FILE_LINK);
+curl_setopt($ch, CURLOPT_URL,SERIES_FILE_LINK);
 $series = explode("\r\n",curl_exec($ch));
 $videos=0;
 $seriesAssets = $con->query("SELECT * FROM series");
@@ -278,7 +213,12 @@ $numFiles = count($files);
 for ($c=0;$c<count($files);$c++) {
     
     //curl_setopt($ch, CURLOPT_URL,$file);
-        GoogleLogin($ch,$USERNAME,$PASSWORD);
+        //GoogleLogin($ch,$USERNAME,$PASSWORD);
+    
+      echo "[INFO] Relogging into Google Account...\n";
+      $g->login(GOOGLE_USER,GOOGLE_PASSWORD);
+      echo "[INFO] Login OK.\n";
+    
         curl_setopt($ch, CURLOPT_URL, 'https://www.youtube.com/download_reports?action_ads_partner_revenue=1&o='.$CONTENT_OWNER);
         curl_setopt($ch, CURLOPT_POST, 0);
         curl_setopt($ch, CURLOPT_POSTFIELDS, null);
@@ -427,7 +367,7 @@ echo "[INFO] Calculating videos views & earnings.\n";
 $con->query("INSERT INTO videos SELECT id,title,channel,SUM(views) as views,SUM(earnings) as earnings,year,trimester,thumbnail,serie,cms_id,channel_id,season,episode,asset_id FROM videos_tmp WHERE year = $year AND trimester = $trimester AND cms_id='$CONTENT_OWNER' group by id");
 //$con->close();
 echo "[INFO] Downloading thumbnail images and inserting them into DB.\n";
-$videosIds = $con->query("SELECT id FROM videos WHERE year = '$year' AND trimester = '$trimester' AND cms_id='$CONTENT_OWNER'");
+$videosIds = $con->query("SELECT id FROM videos WHERE year = '$year' AND trimester = '$trimester' AND cms_id='$CONTENT_OWNER' AND thumbnail IS NULL");
 foreach ($videosIds as $vidId) {
     $id = $vidId['id'];
     
@@ -441,7 +381,8 @@ echo "[INFO] Cleaning up temp data...\n";
 
 $con->query("DELETE FROM videos_tmp WHERE year='{$year}' AND trimester= '{$trimester}' AND cms_id = '$CONTENT_OWNER'");
 $con->close();
-echo "[INFO] Done.\n\n";
+echo "[INFO] Done.\n";
+echo "[INFO] Importing completed in ".(time()-$benchmark_s)." seconds.\n\n";
 //var_dump($chIds);
 
 //echo json_encode(array("progress" => 100,"done"=>true));

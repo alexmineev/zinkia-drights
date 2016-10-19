@@ -15,7 +15,7 @@ $con = getDB();
  $serie = $con->escape_string($_GET['serie']);
  $title = $con->escape_string($_GET['title']);
  
- $filter="";
+ $filter = "";
  if (strlen($_GET['serie'])>0)
  {
      $filter = "AND serie LIKE '%$serie%' "; 
@@ -34,9 +34,10 @@ $con = getDB();
  }
  if (is_null($_GET['channels']) || !isset($_GET['channels'])) {
      if ($trimester!=0)
-    $videos = $con->query("SELECT id,title,channel,serie,views,earnings,season,episode FROM videos WHERE year = $year AND trimester = $trimester AND cms_id = '$cms' $filter group by id"); 
-    else
-     $videos = $con->query("SELECT id,title,channel,serie,sum(views) as views,sum(earnings) as earnings,season,episode FROM videos WHERE year = $year AND cms_id = '$cms' $filter group by id");    
+    $videos = $con->query("SELECT id,title,channel,serie,views,earnings,season,episode FROM videos WHERE year = $year AND trimester = $trimester AND cms_id = '$cms' $filter"); 
+        else
+    $videos = $con->query("SELECT id,title,channel,serie,sum(views) as views,sum(earnings) as earnings,season,episode FROM videos WHERE year = $year AND cms_id = '$cms' $filter group by id");
+        
  } else {
      
     $chList = array();
@@ -46,7 +47,7 @@ $con = getDB();
     
     $chList = implode(",",$chList);
     if ($trimester!=0)
-    $videos = $con->query("SELECT id,title,channel,serie,views,earnings,season,episode FROM videos WHERE year = $year AND trimester = $trimester AND cms_id = '$cms' AND channel_id IN ($chList) $filter group by id");  
+    $videos = $con->query("SELECT id,title,channel,serie,views,earnings,season,episode FROM videos WHERE year = $year AND trimester = $trimester AND cms_id = '$cms' AND channel_id IN ($chList) $filter");  
     else 
     $videos = $con->query("SELECT id,title,channel,serie,sum(views) as views,sum(earnings) as earnings,season,episode FROM videos WHERE year = $year AND cms_id = '$cms' AND channel_id IN ($chList) $filter group by id");      
  } 
@@ -59,9 +60,9 @@ $con = getDB();
      $res -> serie = $video['serie'];
      $res -> channel = $video['channel'];
      $res -> views = $video['views']; 
-     $res -> earnings =$video['earnings']; 
+     $res -> earnings = $video['earnings']; 
      $res -> episode = $video['episode']; 
-     $res -> season =$video['season']; 
+     $res -> season  = $video['season']; 
           
     $results[] = $res;  
  }

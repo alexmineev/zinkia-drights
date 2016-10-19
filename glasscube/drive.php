@@ -26,7 +26,7 @@ echo $json;
 
 function genCSVFile($db,$year,$trimester,$cms,$channels) {
     
-    $serie = $db->escape_string($_REQUEST['serie']);
+ $serie = $db->escape_string($_REQUEST['serie']);
  $title =$db->escape_string($_REQUEST['title']);
  
  $filter="";
@@ -38,6 +38,13 @@ function genCSVFile($db,$year,$trimester,$cms,$channels) {
  if (strlen($_REQUEST['title'])>0)
  {
      $filter .= "AND title LIKE '%$title%' "; 
+ }
+ 
+ if (isset ($_REQUEST['season']) && $_REQUEST['season']>0) {
+     $filter .= " AND season= ".$db->escape_string($_REQUEST['season']);
+ }
+ if (isset ($_REQUEST['episode']) && $_REQUEST['episode']>0) {
+    $filter .= " AND episode= ".$db->escape_string($_REQUEST['episode']); 
  }
     
     if (is_null($channels)) {
