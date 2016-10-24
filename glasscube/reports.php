@@ -95,12 +95,8 @@ if (!is_numeric($year) || !is_numeric($trimester) || !isset($cms)) {
 $type = $year < 2016 ? "rawdata":"videoclaim";
 $oldformat = $year<2016;
 
-$USERNAME = 'alexey.mineev@zinkia.com'; 
-$PASSWORD = 'am071215';
-
 
 $CONTENT_OWNER = $cms;//"-3HHK8UB89SXTeTPkdEsZQ";//"3sk-VT2PP3aGHHSPGjBd9A";//"-3HHK8UB89SXTeTPkdEsZQ";//"0YSVm7yx3KFfY2JfQ2_1CA";
-$SERIES_FILE_LINK = 'https://docs.google.com/spreadsheets/export?id=1SIs4_9M0Ghn63tZEILoquree5RJHdURCC88e1XQf8WM&exportFormat=csv';
 
 $ch = curl_init();
     
@@ -139,7 +135,19 @@ function toCSVFileName($link) {
     return substr($file,0,strpos($file,".zip"));
 }
 
-
+function _getLang($asset_tags,$langs) {
+         foreach ($asset_tags as $tag)
+         {
+            if (preg_match("#_([A-Z]{2})$#",$tag,$regs)>0)
+            {
+                
+                if ( isset($langs[$regs[1]]) )
+                    return $langs[$regs[1]];
+                else 
+                   continue;
+            }
+         }
+}
 /* fetching report links */
 function getFilesList($result,$type,$year,$trimester) {
     
@@ -166,7 +174,7 @@ foreach ($result as $link) {
 }
 return $files;
 }
-//var_dump($files);
+
 
 $files = getFilesList($result,$type,$year,$trimester);
 if (count($files) == 0)  {
@@ -194,7 +202,8 @@ if ($oldformat) {
            "channel_id" => $item['channel_id'],
            "asset_id" => $item['asset_id'],
            "episode" => $item['episode'],
-           "season" => $item['season']
+           "season" => $item['season'],
+           "lang_id" => $item['lang_id']
        );
    }
 }
@@ -202,19 +211,24 @@ if ($oldformat) {
 foreach ($channels as $channel) {
     $chIds[] = $channel['id'];
 }
-$con->query("DELETE FROM videos WHERE year='{$year}' AND trimester= '{$trimester}' AND cms_id = '$CONTENT_OWNER'");
-$con->query("DELETE FROM videos_tmp WHERE year='{$year}' AND trimester= '{$trimester}' AND cms_id = '$CONTENT_OWNER'");
+
+    $con->query("DELETE FROM videos WHERE year='{$year}' AND trimester= '{$trimester}' AND cms_id = '$CONTENT_OWNER'");
+    $con->query("DELETE FROM videos_tmp WHERE year='{$year}' AND trimester= '{$trimester}' AND cms_id = '$CONTENT_OWNER'");
+
 curl_setopt($ch, CURLOPT_URL,SERIES_FILE_LINK);
 $series = explode("\r\n",curl_exec($ch));
 $videos=0;
 $seriesAssets = $con->query("SELECT * FROM series");
+$langs = $con->query("SELECT * FROM iso_lang");
 $numFiles = count($files);
 
+$isoLangs = array();
+foreach ($langs as $lang) {
+    $isoLangs[$lang['code']] = $lang['name'];
+}
+
 for ($c=0;$c<count($files);$c++) {
-    
-    //curl_setopt($ch, CURLOPT_URL,$file);
-        //GoogleLogin($ch,$USERNAME,$PASSWORD);
-    
+  
       echo "[INFO] Relogging into Google Account...\n";
       $g->login(GOOGLE_USER,GOOGLE_PASSWORD);
       echo "[INFO] Login OK.\n";
@@ -270,7 +284,19 @@ for ($c=0;$c<count($files);$c++) {
     );
     $channel_id= $cells[8];
     $asset_id = $cells[16];
-            
+    
+       
+    
+    $asset_tags = explode("|",$cells[14]);  //Detecting language by asset tags
+    
+    if (is_array($asset_tags) && count($asset_tags)>0) 
+    
+        $lang_id = _getLang($asset_tags,$isoLangs);
+    
+    else 
+        $lang_id = null;
+    
+    
     $season = "0";
     $episode = "0";
     
@@ -282,6 +308,7 @@ for ($c=0;$c<count($files);$c++) {
        $channel = $vData[$cells[0]]['channel'];
        $channel_id = $vData[$cells[0]]['channel_id'];
        $asset_id = $vData[$cells[0]]['asset_id'];
+       $lang_id = $vData[$cells[0]]['lang_id'];
        $season = $vData[$cells[0]]['season'];
        $episode = $vData[$cells[0]]['episode'];
        //echo $channel."\n";
@@ -322,7 +349,7 @@ for ($c=0;$c<count($files);$c++) {
             
     //Detection by Asset Custom_ID
     //TODO: Optimise to manual matching in array..
-     //Matching asset CUSTOM_ID
+    //Matching asset CUSTOM_ID
      foreach ($seriesAssets as $asset)
     {
         if (substr($asset_id, 0,strlen($asset['id']))!=$asset['id']) continue;
@@ -348,7 +375,7 @@ for ($c=0;$c<count($files);$c++) {
     /* * 
      * end
      * */ 
-    $con->query("INSERT INTO videos_tmp (id,title,serie,channel,views,earnings,year,trimester,cms_id,channel_id,season,episode,asset_id) VALUES ('{$video['id']}','{$video['title']}','{$serie}','{$video['channel']}','{$video['views']}','{$video['earnings']}','{$year}','{$trimester}','$CONTENT_OWNER','$channel_id','$season','$episode','$asset_id')");
+    $con->query("INSERT INTO videos_tmp (id,title,serie,channel,views,earnings,year,trimester,cms_id,channel_id,season,episode,asset_id,lang_id) VALUES ('{$video['id']}','{$video['title']}','{$serie}','{$video['channel']}','{$video['views']}','{$video['earnings']}','{$year}','{$trimester}','$CONTENT_OWNER','$channel_id','$season','$episode','$asset_id','$lang_id')");
     
     //$videos[] =$video;
     $videos++;
@@ -364,7 +391,7 @@ for ($c=0;$c<count($files);$c++) {
 echo "[INFO] Done. ".$videos." videos data entries processed.\n";
 echo "[INFO] Calculating videos views & earnings.\n";
 
-$con->query("INSERT INTO videos SELECT id,title,channel,SUM(views) as views,SUM(earnings) as earnings,year,trimester,thumbnail,serie,cms_id,channel_id,season,episode,asset_id FROM videos_tmp WHERE year = $year AND trimester = $trimester AND cms_id='$CONTENT_OWNER' group by id");
+$con->query("INSERT INTO videos SELECT id,title,channel,SUM(views) as views,SUM(earnings) as earnings,year,trimester,thumbnail,serie,cms_id,channel_id,season,episode,asset_id,lang_id FROM videos_tmp WHERE year = $year AND trimester = $trimester AND cms_id='$CONTENT_OWNER' group by id");
 //$con->close();
 echo "[INFO] Downloading thumbnail images and inserting them into DB.\n";
 $videosIds = $con->query("SELECT id FROM videos WHERE year = '$year' AND trimester = '$trimester' AND cms_id='$CONTENT_OWNER' AND thumbnail IS NULL");
@@ -376,7 +403,9 @@ foreach ($videosIds as $vidId) {
     
     $con->query("UPDATE videos SET thumbnail='$thumbBase64' WHERE id = '$id'");
 }
-echo "[INFO] Done. ".(is_array($videosIds)?count($videosIds):$videosIds->num_rows)." videos processed and inserted into DB.\n";
+echo "[INFO] Done. ".(is_array($videosIds)?count($videosIds):$videosIds->num_rows)." new videos detected and loaded into DB. \n";
+$vids =$con->query("SELECT DISTINCT id FROM videos WHERE year = '$year' AND trimester = '$trimester' AND cms_id='$CONTENT_OWNER'");
+echo  "[INFO] ".count($vids)." videos processed.\n";
 echo "[INFO] Cleaning up temp data...\n";
 
 $con->query("DELETE FROM videos_tmp WHERE year='{$year}' AND trimester= '{$trimester}' AND cms_id = '$CONTENT_OWNER'");

@@ -22,10 +22,6 @@ CREATE TABLE IF NOT EXISTS `videos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Indexes for dumped tables
---
-
---
 -- Indexes for table `videos`
 --
 ALTER TABLE `videos`

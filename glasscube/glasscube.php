@@ -277,8 +277,8 @@ class GlassCube {
 }
 
 
-const USER = "alexey.mineev@zinkia.com";
-const PASSWORD = "mi2a18o1";
+const USER = "";
+const PASSWORD = "";
 
 echo "******* GlassCube Tasks Exporter v0.alpha ********\n\n";
 echo "****> Connecting & login into ".GlassCube::BASE_URL."\n";
