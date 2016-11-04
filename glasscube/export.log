@@ -1,9 +1,0 @@
-******* GlassCube tasks exporter v0.alpha ********
-
-****> Connecting & login into https://salitamontiel.glasscubes.com
->>>> Reading section list...>>>> Trying to login with user: alexey.mineev@zinkia.com
->>>> Login done with user alexey.mineev@zinkia.com
->>>>> Found project  | ID: dashboard>>>>> Done. Section list fetched. Found 1>>>> Parsing section >>>> Fetching task list for section id: dashboard>>>> Trying to login with user: alexey.mineev@zinkia.com
->>>> Login done with user alexey.mineev@zinkia.com
-
-Fatal error: Call to a member function getAttribute() on null in C:\Program Files (x86)\Zend\Apache2\htdocs\youtube\index.php on line 31
