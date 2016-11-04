@@ -1,0 +1,11 @@
+{
+    "debug": true,
+    "updateInterval": 5000,
+    "table": {
+        "animation": false,
+        "defaultPageSize": 50,
+        "disableHeaderUpdate" : true
+    },
+    "animations" : false,
+    "initialPanel" :"panel_monitor"
+}

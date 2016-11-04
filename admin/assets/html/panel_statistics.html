@@ -1,0 +1,253 @@
+<section class="block-box block-box-tabbed">
+
+		<header class="clearfix">
+
+			<span class="tit">Search parameters</span>
+
+		</header>
+
+		<form>
+
+			<div class="form-horizontal">
+
+				<fieldset>
+					<div class="form-group">
+						<label class="col-sm-2 control-label" for="">Name</label>
+						<div class="col-sm-2">
+							<input type="text" class="form-control" placeholder="Name" id="stat_name" />
+						</div>
+						<label class="col-sm-2 control-label" for="">Execution time</label>
+						<div class="col-sm-2">
+							<div class="input-group">
+								<input type="text" class="timepicker form-control" id="stat_exectime" />
+								<span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+							</div>
+						</div>
+						<label class="col-sm-1 control-label" for="">Between</label>
+						<div class="col-sm-2">
+							<div class="input-group">
+								<input type="text" class="timepicker form-control" id="stat_exectime_end" />
+								<span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+                                            <div id="stat_plugins_container"></div>
+					<!--	<label class="col-sm-2 control-label" for="">Plugin</label>
+						<div class="col-sm-2">
+							<select class="form-control" id="stat_plugin">
+								<option>All</option>
+								<option>Lorem ipsum</option>
+							</select>
+						</div>-->
+						<label class="col-sm-2 control-label" for="">Creation time</label>
+						<div class="col-sm-2">
+							<div class="input-group">
+								<input type="text" class="datetimepicker form-control" id="stat_creation"/>
+								<span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+							</div>
+						</div>
+						<label class="col-sm-1 control-label" for="">Between</label>
+						<div class="col-sm-2">
+							<div class="input-group">
+								<input type="text" class="datetimepicker form-control" id="stat_creation_end" />
+								<span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<div id="stat_config_container"></div>
+						<label class="col-sm-2 control-label" for="">Finished date</label>
+						<div class="col-sm-2">
+							<div class="input-group">
+								<input type="text" class="datetimepicker form-control" id="stat_finished" />
+								<span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+							</div>
+						</div>
+						<label class="col-sm-1 control-label" for="">Between</label>
+						<div class="col-sm-2">
+							<div class="input-group">
+								<input type="text" class="datetimepicker form-control" id="stat_finished_end" />
+								<span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+                                            <div id="stat_group_container"></div>
+						<label class="col-sm-2 control-label" for="">Priority</label>
+						<div class="col-sm-2">
+							<select class="form-control" id="stat_priority_sel">
+							</select>
+						</div>
+						<div class="col-sm-1">
+							<input type="number" class="form-control" id="stat_priority" />
+						</div>
+                                        </div>
+                                        <div class="form-group">
+						<label class="col-sm-6 control-label" for="" style="margin-left:-17px">Between</label>
+						<div class="col-sm-2">
+							<select class="form-control" id="stat_priority_end_sel">
+							</select>
+						</div>
+						<div class="col-sm-1">
+							<input type="text" class="form-control" id="stat_priority_end" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label" for="">User</label>
+						<div class="col-sm-2">
+							<select class="form-control" id="stat_user" multiple="multiple">
+							</select>
+						</div>
+                                        </div>        
+						<!--<label class="col-sm-2 control-label" for="">Pools primary</label>
+						<div class="col-sm-2">
+							<select class="form-control" id="stat_pool_primary">
+							</select>
+						</div>-->
+                                        <div class="form-group">        
+                                                <div id="stat_pool_primary_container"></div>
+                                                <div id="stat_pool_secondary_container"></div>
+                                        </div>
+                                        <div class="form-group">        
+						<!--<label class="col-sm-2 control-label" for="">Pools secondary</label>
+						<div class="col-sm-2">
+							<select class="form-control" id="stat_pool_secondary">
+								
+							</select>
+						</div>-->
+                                                <div id="stat_node_primary_container"></div>
+                                                <div id="stat_node_secondary_container"></div>
+                                                <!--<label class="col-sm-6 control-label" for="">Nodes primary</label>
+						<div class="col-sm-2">
+							<select class="form-control" id="stat_pool_primary">
+							</select>
+						</div>
+                                                
+						<label class="col-sm-2 control-label" for="">Nodes secondary</label>
+						<div class="col-sm-2">
+							<select class="form-control" id="stat_pool_secondary">
+							</select>
+						</div>-->
+                                                <div id="stat_status_container"></div>
+					</div>
+					<!--<div class="form-group">
+						<label class="col-sm-2 control-label" for="">
+							<input type="checkbox" id="stat_mainjobs"> Main jobs
+						</label>
+						<label class="col-sm-2 control-label" for="">
+							<input type="checkbox" id="stat_parentjobs" /> Parent jobs
+						</label>
+						<label class="col-sm-2 control-label" for="">
+							<input type="checkbox" id="stat_childjobs"> Child jobs
+						</label>
+                                                
+					</div>-->
+				</fieldset>
+
+				<div class="sep"></div>
+
+				<p class="text-right top-bordered">
+                                    Force server resyncronization&nbsp;&nbsp;<input type="checkbox" id="stat_syncJobs" />&nbsp;&nbsp;
+					<button type="button" class="btn btn-primary btn-lg" id="stat_btnOk">Accept</button>
+				</p>
+
+		</form>
+
+				<fieldset class="bordered">
+
+					<legend>Data Jobs</legend>
+
+					<div class="form-group">
+						<label class="col-sm-1 control-label" for="">Total:</label>
+						<div class="col-sm-1">
+							<p class="form-control-static" id="stat_total">N</p>
+						</div>
+						<label class="col-sm-2 control-label" for="">With errors:</label>
+						<div class="col-sm-1">
+							<p class="form-control-static" id="stat_errors">N</p>
+						</div>
+						<label class="col-sm-2 control-label" for="">With warnings:</label>
+						<div class="col-sm-1">
+							<p class="form-control-static" id="stat_warnings">N</p>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="col-sm-1 control-label" for="">Finished:</label>
+						<div class="col-sm-1">
+							<p class="form-control-static" id="stat_jobsfinished">N</p>
+						</div>
+						<label class="col-sm-1 control-label" for="">Pause:</label>
+						<div class="col-sm-1">
+							<p class="form-control-static" id="stat_pause">0</p>
+						</div>
+						<label class="col-sm-1 control-label" for="">Pending:</label>
+						<div class="col-sm-1">
+							<p class="form-control-static" id="stat_pending">0</p>
+						</div>
+						<label class="col-sm-1 control-label" for="">Processing:</label>
+						<div class="col-sm-1">
+							<p class="form-control-static" id="stat_processing">0</p>
+						</div>
+					</div>
+		
+				</fieldset>
+
+				<fieldset class="bordered">
+
+					<legend>Time</legend>
+
+					<div class="form-group">
+						<label class="col-sm-2 control-label" for="">Total execution:</label>
+						<div class="col-sm-2">
+							<p class="form-control-static" id="stat_totalexec">N</p>
+						</div>
+						<label class="col-sm-2 control-label" for="">Total live:</label>
+						<div class="col-sm-2">
+							<p class="form-control-static" id="stat_totallive">N</p>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="col-sm-2 control-label" for="">Average execution:</label>
+						<div class="col-sm-2">
+							<p class="form-control-static" id="stat_avgexec">N</p>
+						</div>
+						<label class="col-sm-2 control-label" for="">Average live:</label>
+						<div class="col-sm-2">
+							<p class="form-control-static" id="stat_avglive">N</p>
+						</div>
+					</div>
+
+				</fieldset>
+
+				<fieldset class="bordered">
+
+					<legend>Nodes</legend>
+
+					<div class="table-responsive collapse in" id="stat_nodes">
+                                <table class="table table-bordered table-light-blue" id="stat_nodes_dt">
+				<thead>
+					<tr>
+                                            
+						<th>Name</th>
+                                                <th>Jobs executed</th>
+
+					</tr>
+				</thead>
+				<tbody>
+					
+				</tbody>
+                              
+			</table>
+		</div><!--collapse-->
+				</fieldset>
+
+			</div><!--form-horizontal-->
+
+		</form>
+
+
+
+	</section><!--block-box-->

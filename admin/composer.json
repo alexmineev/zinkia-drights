@@ -1,0 +1,11 @@
+{
+    "name": "zinkia-digital-rights/admin",
+    "description": "Description of project admin.",
+    "authors": [
+        {
+            "name": "alexey.mineev",
+            "email": "alexey.mineev@zinkia.com"
+        }
+    ],
+    "require": {}
+}
