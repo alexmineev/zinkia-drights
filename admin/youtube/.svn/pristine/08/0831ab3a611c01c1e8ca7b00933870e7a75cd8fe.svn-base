@@ -1,0 +1,46 @@
+<?php 
+
+set_time_limit(0);
+require_once('Zend/Json/Encoder.php');
+require_once 'DB.inc.php';
+
+if (!isset($_GET['channels'])) $_GET['channels'] = null;
+function loadVideos($year,$trimester,$cms) {
+$con = getDB();
+ 
+ $year = $con->escape_string($year);
+ $trimester = $con->escape_string($trimester);
+ $cms = $con->escape_string($cms);
+ if (is_null($_GET['channels']) || !isset($_GET['channels'])) {
+    $videos = $con->query("SELECT id,title,channel,serie,views,earnings FROM videos WHERE year = $year AND trimester = $trimester AND cms_id = '$cms'"); 
+ } else {
+     
+    $chList = array();
+    $channels = json_decode($_GET['channels']);
+    foreach ($channels as $chId)
+        $chList[] = "'$chId'";
+    
+    $chList = implode(",",$chList);
+    $videos = $con->query("SELECT id,title,channel,serie,views,earnings FROM videos WHERE year = $year AND trimester = $trimester AND cms_id = '$cms' AND channel_id IN ($chList)");  
+ } 
+ $results = array();
+ foreach ($videos as $video) {
+     
+     $res = new stdClass();
+     $res -> id = $video['id'];
+     $res -> title = utf8_encode($video['title']);
+     $res -> serie = utf8_encode($video['serie']);
+     $res -> channel = utf8_encode($video['channel']);
+     $res -> views = $video['views']; 
+     $res -> earnings =$video['earnings']; 
+     
+    $results[] = $res;  
+ }
+ 
+ return $results;
+}                                                                                                                                                                                                                                                               
+
+$res = new stdClass();
+$res -> videos  = loadVideos($_GET['year'],$_GET['trimester'],$_GET['cms']);
+
+echo @Zend_Json_Encoder::encode($res);
